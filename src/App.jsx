@@ -1,11 +1,13 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import AnnouncementBar from './components/AnnouncementBar'
 import Navbar from './components/Navbar'
-import Home from './pages/Home'
+import Home from './pages/home/Home'
 import CartDrawer from './components/CartDrawer'
 import WishlistModal from './components/WishlistModal'
 import SearchModal from './components/SearchModal'
 import MobileMenu from './components/MobileMenu'
+import { siteConfig } from './data/siteConfig'
+import { homeData } from './data/homeData'
 
 export default function App() {
   const [activeNav, setActiveNav] = useState('HOME')
@@ -15,33 +17,39 @@ export default function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [searchInitialQuery, setSearchInitialQuery] = useState('')
 
-  // Initial cart items for realistic interactivity
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      name: 'Silk Jacquard Evening Shirt',
-      price: 2450,
-      quantity: 1,
-      size: 'M',
-      image: '/hero_models_perfect.png',
-    },
-  ])
+  // 100% Dynamic Cart State (Starts empty, persists in localStorage if available)
+  const [cartItems, setCartItems] = useState(() => {
+    try {
+      const saved = localStorage.getItem('aera_cart')
+      return saved ? JSON.parse(saved) : []
+    } catch {
+      return []
+    }
+  })
 
-  // Initial wishlist items
-  const [wishlistItems, setWishlistItems] = useState([
-    {
-      id: 2,
-      name: 'Pleated Wide-Leg Trouser',
-      price: 2890,
-      image: '/hero_models_perfect.png',
-    },
-    {
-      id: 3,
-      name: 'Embroidered Slip Dress',
-      price: 3400,
-      image: '/hero_models_perfect.png',
-    },
-  ])
+  // 100% Dynamic Wishlist State (Starts empty, persists in localStorage if available)
+  const [wishlistItems, setWishlistItems] = useState(() => {
+    try {
+      const saved = localStorage.getItem('aera_wishlist')
+      return saved ? JSON.parse(saved) : []
+    } catch {
+      return []
+    }
+  })
+
+  // Synchronize cart with localStorage
+  useEffect(() => {
+    try {
+      localStorage.setItem('aera_cart', JSON.stringify(cartItems))
+    } catch {}
+  }, [cartItems])
+
+  // Synchronize wishlist with localStorage
+  useEffect(() => {
+    try {
+      localStorage.setItem('aera_wishlist', JSON.stringify(wishlistItems))
+    } catch {}
+  }, [wishlistItems])
 
   const handleUpdateQuantity = (id, newQty) => {
     if (newQty <= 0) {
@@ -81,16 +89,18 @@ export default function App() {
   }
 
   const handleShopNow = () => {
-    setIsCartOpen(true)
+    setActiveNav('COLLECTION')
   }
 
   return (
     <div className="min-h-screen bg-[#F8F5E8] flex flex-col font-sans select-none overflow-x-hidden">
-      {/* 1. Burgundy Announcement Bar */}
-      <AnnouncementBar />
+      {/* 1. Dynamic Burgundy Announcement Bar */}
+      <AnnouncementBar message={siteConfig.announcement?.message} />
 
-      {/* 2. Ivory Navbar */}
+      {/* 2. Dynamic Ivory Navbar */}
       <Navbar
+        brandName={siteConfig.brand?.name}
+        navLinks={siteConfig.navigation}
         activeNav={activeNav}
         setActiveNav={setActiveNav}
         onOpenCart={() => setIsCartOpen(true)}
@@ -102,10 +112,10 @@ export default function App() {
         setIsMobileMenuOpen={setIsMobileMenuOpen}
       />
 
-      {/* 3. Main Page Content (Home page with Hero section) */}
+      {/* 3. Main Page Content (Home page driven by dynamic data) */}
       <main className="flex-1 flex flex-col">
         {activeNav === 'HOME' ? (
-          <Home onShopNow={handleShopNow} />
+          <Home data={homeData} onShopNow={handleShopNow} />
         ) : (
           <div className="flex-1 flex flex-col items-center justify-center p-12 text-center">
             <h2 className="font-serif text-3xl font-semibold text-[#171515] mb-2">

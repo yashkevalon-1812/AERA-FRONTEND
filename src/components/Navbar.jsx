@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { Search, Heart, ShoppingBag, User, Menu, X } from 'lucide-react'
 
 export default function Navbar({
+  brandName = 'AERA',
+  navLinks = [],
   activeNav,
   setActiveNav,
   onOpenCart,
@@ -14,14 +16,6 @@ export default function Navbar({
 }) {
   const [searchValue, setSearchValue] = useState('')
 
-  const navLinks = [
-    { id: 'HOME', label: 'HOME' },
-    { id: 'COLLECTION', label: 'COLLECTION' },
-    { id: 'ABOUT US', label: 'ABOUT US' },
-    { id: 'BLOG', label: 'BLOG' },
-    { id: 'CONTACT US', label: 'CONTACT US' },
-  ]
-
   const handleSearchSubmit = (e) => {
     e.preventDefault()
     if (searchValue.trim() && onOpenSearch) {
@@ -33,7 +27,7 @@ export default function Navbar({
     <header className="w-full bg-[#F8F5E8] border-b border-[#ECE7D6]/60 sticky top-0 z-30 transition-all">
       <div className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-12 h-16 sm:h-[68px] flex items-center justify-between">
         
-        {/* Left: Desktop Navigation Links */}
+        {/* Left: Dynamic Navigation Links */}
         <nav className="hidden lg:flex items-center gap-7 xl:gap-8 flex-1">
           {navLinks.map((link) => {
             const isActive = activeNav === link.id
@@ -64,19 +58,19 @@ export default function Navbar({
           </button>
         </div>
 
-        {/* Center: Brand Logo */}
+        {/* Center: Dynamic Brand Logo */}
         <div className="flex-shrink-0 text-center">
           <button
             onClick={() => setActiveNav('HOME')}
             className="cursor-pointer group inline-block"
           >
             <span className="font-serif text-[28px] sm:text-[32px] tracking-[0.26em] font-semibold text-[#171515] group-hover:text-[#97173a] transition-colors leading-none">
-              AERA
+              {brandName}
             </span>
           </button>
         </div>
 
-        {/* Right: Search + Icons */}
+        {/* Right: Search + Action Icons */}
         <div className="flex items-center justify-end gap-3 sm:gap-4 md:gap-5 flex-1">
           {/* Rounded Pill Search Bar */}
           <form
