@@ -37,10 +37,11 @@ export default function Hero({
         <div 
           style={{
             position: 'absolute',
-            top: '110px',
+            top: '70px',
             left: '50%',
             transform: 'translateX(-50%)',
-            width: '100%',
+            width: '1483px',
+            height: '484px',
             textAlign: 'center',
             pointerEvents: 'none',
             userSelect: 'none',
@@ -85,7 +86,7 @@ export default function Hero({
           src={modelImage.src}
           alt={modelImage.alt}
           style={{
-            width: '1273px',
+            width: '1000px',
             height: '926px',
             maxWidth: '1273px',
             maxHeight: '926px',
@@ -93,6 +94,8 @@ export default function Hero({
             objectPosition: 'bottom center',
             opacity: 1,
             transform: 'rotate(0deg)',
+            marginRight: '30%',
+            marginBottom: '27%',
           }}
           className="w-full h-full select-none"
           loading="eager"
