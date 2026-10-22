@@ -49,7 +49,7 @@ export default function Hero({
       <div className="hidden md:flex relative z-20 w-full max-w-[1920px] mx-auto px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 pb-2.5 sm:pb-3 md:pb-3.5 lg:pb-4 xl:pb-5 items-end justify-between pointer-events-none">
         
         {/* Bottom-Left: Supporting Copy & Shop Now Button */}
-        <div className="pointer-events-auto max-w-[360px] lg:max-w-[400px] xl:max-w-[450px] text-left mb-2 sm:mb-2.5 md:mb-3 lg:mb-3.5">
+        <div className="pointer-events-auto max-w-[360px] lg:max-w-[400px] xl:max-w-[450px] text-left mb-2 sm:mb-2.5 md:mb-3 lg:mb-12">
           <div className="text-[#97173a] font-inter font-normal text-[17px] leading-[24px] tracking-normal mb-3 lg:mb-3.5 select-text">
             {Array.isArray(description) ? (
               description.map((line, idx) => (
@@ -65,7 +65,7 @@ export default function Hero({
           {buttonText && (
             <button
               onClick={onShopNow}
-              className="inline-flex items-center justify-center bg-[#97173a] hover:bg-[#7e122f] text-white text-[11px] lg:text-[11.5px] xl:text-[12.5px] font-semibold px-4.5 lg:px-5.5 xl:px-6 py-2 lg:py-2.5 rounded-lg transition-all duration-200 shadow-xs hover:shadow-md cursor-pointer tracking-normal"
+              className="inline-flex items-center justify-center bg-[#97173a] hover:bg-[#7e122f] text-white font-poppins font-normal text-[16px] leading-[150%] capitalize px-6 xl:px-7 py-2.5 rounded-lg transition-all duration-200 shadow-xs hover:shadow-md cursor-pointer tracking-normal"
             >
               {buttonText}
             </button>
@@ -131,7 +131,7 @@ export default function Hero({
           {buttonText && (
             <button
               onClick={onShopNow}
-              className="inline-flex items-center justify-center bg-[#97173a] hover:bg-[#7e122f] text-white text-xs font-semibold px-6 py-2.5 rounded-lg transition-colors shadow-xs cursor-pointer"
+              className="inline-flex items-center justify-center bg-[#97173a] hover:bg-[#7e122f] text-white font-poppins font-normal text-[16px] leading-[150%] capitalize px-6 py-2.5 rounded-lg transition-colors shadow-xs cursor-pointer"
             >
               {buttonText}
             </button>
