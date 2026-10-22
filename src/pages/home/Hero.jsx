@@ -26,7 +26,7 @@ export default function Hero({
       {/* 1. Large Decorative Background Wordmark: A E R A — Exact Proportional Scale */}
       {wordmark && (
         <div 
-          className="absolute top-[5%] left-1/2 -translate-x-1/2 w-full max-w-[1550px] text-center pointer-events-none select-none z-0 overflow-hidden"
+          className="absolute top-[8%] left-1/2 -translate-x-1/2 w-full max-w-[1550px] text-center pointer-events-none select-none z-0 overflow-hidden"
           aria-hidden="true"
         >
           <span className="font-serif font-medium text-[clamp(65px,19vw,360px)] leading-[100%] tracking-[clamp(22px,7.2vw,140px)] pl-[clamp(22px,7.2vw,140px)] uppercase text-[#E8E2D0] opacity-85 inline-block whitespace-nowrap">
@@ -36,7 +36,7 @@ export default function Hero({
       )}
 
       {/* 2. Desktop Models Image — Grounded on bottom edge, horizontally centered */}
-      <div className="hidden md:flex absolute bottom-0 left-1/2 -translate-x-1/2 h-[96%] w-auto max-w-[85%] items-end justify-center pointer-events-none z-10">
+      <div className="hidden md:flex absolute bottom-[-65px] left-1/2 -translate-x-1/2 h-[725px] w-auto max-w-[85%] items-end justify-center pointer-events-none z-10">
         <img
           src={imgSrc}
           alt={imgAlt}
