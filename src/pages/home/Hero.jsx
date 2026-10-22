@@ -15,37 +15,42 @@ export default function Hero({
   },
   onShopNow,
 }) {
+  const imgSrc = typeof modelImage === 'string'
+    ? modelImage
+    : (modelImage?.src || heroImage)
+  const imgAlt = modelImage?.alt || 'AERA Autumn Winter 2026 Collection'
+
   return (
-    <section className="relative w-full max-w-[1920px] h-[1126px] opacity-100 rotate-0 mx-auto overflow-hidden bg-[#F8F5E8]">
+    <section className="relative w-full max-w-[1920px] mx-auto overflow-hidden bg-[#F8F5E8] aspect-[1024/481] min-h-[480px] max-h-[920px] flex flex-col justify-end">
       
-      {/* 1. Large Decorative Background Wordmark: A E R A — 100% Tailwind CSS */}
+      {/* 1. Large Decorative Background Wordmark: A E R A — Exact Proportional Scale */}
       {wordmark && (
         <div 
-          className="absolute top-[70px] left-1/2 -translate-x-1/2 w-[1483px] h-[484px] text-center pointer-events-none select-none z-0 overflow-hidden"
+          className="absolute top-[5%] left-1/2 -translate-x-1/2 w-full max-w-[1550px] text-center pointer-events-none select-none z-0 overflow-hidden"
           aria-hidden="true"
         >
-          <span className="font-serif font-medium text-[clamp(80px,20.833vw,400px)] leading-[100%] tracking-[clamp(28px,7.448vw,143px)] pl-[clamp(28px,7.448vw,143px)] uppercase text-[#E8E2D0] opacity-85 inline-block whitespace-nowrap">
+          <span className="font-serif font-medium text-[clamp(65px,19vw,360px)] leading-[100%] tracking-[clamp(22px,7.2vw,140px)] pl-[clamp(22px,7.2vw,140px)] uppercase text-[#E8E2D0] opacity-85 inline-block whitespace-nowrap">
             {wordmark}
           </span>
         </div>
       )}
 
-      {/* 2. Desktop Models Image — 100% Tailwind CSS */}
-      <div className="hidden md:flex absolute top-[200px] left-[326px] w-[1273px] h-[926px] opacity-100 rotate-0 items-end justify-center pointer-events-none z-10">
+      {/* 2. Desktop Models Image — Grounded on bottom edge, horizontally centered */}
+      <div className="hidden md:flex absolute bottom-0 left-1/2 -translate-x-1/2 h-[96%] w-auto max-w-[85%] items-end justify-center pointer-events-none z-10">
         <img
-          src={modelImage.src}
-          alt={modelImage.alt}
-          className="w-[1000px] h-[926px] max-w-[1273px] max-h-[926px] object-contain object-bottom opacity-100 rotate-0 mr-[30%] mb-[27%] select-none"
+          src={imgSrc}
+          alt={imgAlt}
+          className="h-full w-auto max-w-none object-contain object-bottom select-none"
           loading="eager"
         />
       </div>
 
-      {/* 3. Desktop & Tablet Overlays (>= md) — Positioned directly on the models as in reference image */}
-      <div className="hidden md:flex absolute top-[440px] left-0 right-0 z-20 w-full max-w-[1920px] mx-auto px-10 lg:px-16 xl:px-20 justify-between items-start pointer-events-none">
+      {/* 3. Desktop & Tablet Overlays (>= md) — Pixel-aligned to Reference Composition */}
+      <div className="hidden md:flex relative z-20 w-full max-w-[1920px] mx-auto px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 pb-2.5 sm:pb-3 md:pb-3.5 lg:pb-4 xl:pb-5 items-end justify-between pointer-events-none">
         
-        {/* Left: Supporting Copy & Shop Now Button alongside left model */}
-        <div className="pointer-events-auto max-w-[280px] lg:max-w-[320px] xl:max-w-[350px] text-left pt-15 lg:pt-27">
-          <div className="text-[#97173a] text-[13px] lg:text-[14px] xl:text-[14.5px] font-sans font-medium leading-[1.42] tracking-normal mb-3.5 select-text">
+        {/* Bottom-Left: Supporting Copy & Shop Now Button */}
+        <div className="pointer-events-auto max-w-[210px] sm:max-w-[230px] lg:max-w-[260px] xl:max-w-[300px] text-left mb-2 sm:mb-2.5 md:mb-3 lg:mb-3.5">
+          <div className="text-[#97173a] text-[11.5px] sm:text-[12px] lg:text-[13px] xl:text-[14px] font-sans font-medium leading-[1.38] tracking-normal mb-2.5 lg:mb-3.5 select-text">
             {Array.isArray(description) ? (
               description.map((line, idx) => (
                 <span key={idx} className="block">
@@ -60,24 +65,24 @@ export default function Hero({
           {buttonText && (
             <button
               onClick={onShopNow}
-              className="inline-flex items-center justify-center bg-[#97173a] hover:bg-[#7e122f] text-white text-[12px] xl:text-[12.5px] font-semibold px-6 xl:px-7 py-2.5 rounded-lg transition-all duration-200 shadow-xs hover:shadow-md cursor-pointer tracking-normal"
+              className="inline-flex items-center justify-center bg-[#97173a] hover:bg-[#7e122f] text-white text-[11px] lg:text-[11.5px] xl:text-[12.5px] font-semibold px-4.5 lg:px-5.5 xl:px-6 py-2 lg:py-2.5 rounded-lg transition-all duration-200 shadow-xs hover:shadow-md cursor-pointer tracking-normal"
             >
               {buttonText}
             </button>
           )}
         </div>
 
-        {/* Right: Seasonal Tag & Editorial Headline positioned OVER the right model */}
-        <div className="pointer-events-auto text-right flex flex-col items-end mr-[240px] lg:mr-[300px] xl:mr-[360px]">
+        {/* Bottom-Right: Seasonal Tag & Editorial Headline */}
+        <div className="pointer-events-auto text-right flex flex-col items-end">
           {/* Overhead Seasonal Tag */}
           {seasonTag && (
-            <div className="font-poppins font-normal text-[14px] leading-[150%] tracking-[5px] uppercase text-[#97173a] opacity-100 rotate-0 mb-1.5 lg:mb-2 xl:mb-2.5 select-text whitespace-nowrap text-right">
+            <div className="font-poppins font-normal text-[10.5px] sm:text-[11.5px] md:text-[12px] lg:text-[13px] xl:text-[14px] leading-[150%] tracking-[4px] lg:tracking-[5px] uppercase text-[#97173a] opacity-100 rotate-0 mb-1 lg:mb-1.5 xl:mb-2 select-text whitespace-nowrap text-right">
               {seasonTag}
             </div>
           )}
 
           {/* Main Headline (Two Lines, Right-Aligned overlapping right model) */}
-          <h1 className="font-serif font-bold text-[#97173a] text-[56px] md:text-[68px] lg:text-[84px] xl:text-[98px] 2xl:text-[104px] leading-[0.88] uppercase tracking-[-0.015em] select-none m-0 text-right">
+          <h1 className="font-serif font-bold text-[#97173a] text-[48px] sm:text-[56px] md:text-[66px] lg:text-[78px] xl:text-[92px] 2xl:text-[100px] leading-[0.88] uppercase tracking-[-0.015em] select-none m-0 text-right">
             <span className="block">{headline.line1}</span>
             <span className="block">{headline.line2}</span>
           </h1>
@@ -103,8 +108,8 @@ export default function Hero({
         {/* Mobile Models Image */}
         <div className="w-full flex-1 flex items-center justify-center my-2 pointer-events-none">
           <img
-            src={modelImage.src}
-            alt={modelImage.alt}
+            src={imgSrc}
+            alt={imgAlt}
             className="max-h-[46vh] w-auto max-w-[94%] object-contain select-none"
             loading="eager"
           />
