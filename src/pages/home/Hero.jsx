@@ -16,7 +16,7 @@ export default function Hero({
   onShopNow,
 }) {
   return (
-    <section className="relative w-full max-w-[1920px] h-[1126px] opacity-100 rotate-0 mx-auto overflow-hidden bg-[#F8F5E8] flex flex-col justify-end">
+    <section className="relative w-full max-w-[1920px] h-[1126px] opacity-100 rotate-0 mx-auto overflow-hidden bg-[#F8F5E8]">
       
       {/* 1. Large Decorative Background Wordmark: A E R A — 100% Tailwind CSS */}
       {wordmark && (
@@ -40,11 +40,11 @@ export default function Hero({
         />
       </div>
 
-      {/* 3. Desktop & Tablet Overlays (>= md) */}
-      <div className="hidden md:flex relative z-20 w-full max-w-[1840px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20 pb-8 md:pb-10 lg:pb-12 xl:pb-14 items-end justify-between pointer-events-none">
+      {/* 3. Desktop & Tablet Overlays (>= md) — Positioned directly on the models as in reference image */}
+      <div className="hidden md:flex absolute top-[440px] left-0 right-0 z-20 w-full max-w-[1920px] mx-auto px-10 lg:px-16 xl:px-20 justify-between items-start pointer-events-none">
         
-        {/* Bottom-Left: Supporting Copy & Shop Now Button */}
-        <div className="pointer-events-auto max-w-[280px] lg:max-w-[320px] xl:max-w-[350px] text-left">
+        {/* Left: Supporting Copy & Shop Now Button alongside left model */}
+        <div className="pointer-events-auto max-w-[280px] lg:max-w-[320px] xl:max-w-[350px] text-left pt-15 lg:pt-27">
           <div className="text-[#97173a] text-[13px] lg:text-[14px] xl:text-[14.5px] font-sans font-medium leading-[1.42] tracking-normal mb-3.5 select-text">
             {Array.isArray(description) ? (
               description.map((line, idx) => (
@@ -67,8 +67,8 @@ export default function Hero({
           )}
         </div>
 
-        {/* Bottom-Right: Seasonal Tag & Editorial Headline (Right-aligned as in Image 2) */}
-        <div className="pointer-events-auto text-right self-end flex flex-col items-end">
+        {/* Right: Seasonal Tag & Editorial Headline positioned OVER the right model */}
+        <div className="pointer-events-auto text-right flex flex-col items-end mr-[240px] lg:mr-[300px] xl:mr-[360px]">
           {/* Overhead Seasonal Tag */}
           {seasonTag && (
             <div className="font-poppins font-normal text-[14px] leading-[150%] tracking-[5px] uppercase text-[#97173a] opacity-100 rotate-0 mb-1.5 lg:mb-2 xl:mb-2.5 select-text whitespace-nowrap text-right">
@@ -76,7 +76,7 @@ export default function Hero({
             </div>
           )}
 
-          {/* Main Headline (Two Lines, Right-Aligned) */}
+          {/* Main Headline (Two Lines, Right-Aligned overlapping right model) */}
           <h1 className="font-serif font-bold text-[#97173a] text-[56px] md:text-[68px] lg:text-[84px] xl:text-[98px] 2xl:text-[104px] leading-[0.88] uppercase tracking-[-0.015em] select-none m-0 text-right">
             <span className="block">{headline.line1}</span>
             <span className="block">{headline.line2}</span>
