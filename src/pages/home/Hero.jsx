@@ -15,89 +15,27 @@ export default function Hero({
   },
   onShopNow,
 }) {
-  const imgSrc = typeof modelImage === 'string'
-    ? modelImage
-    : (modelImage?.src || heroImage)
-  const imgAlt = modelImage?.alt || 'AERA Autumn Winter 2026 Collection'
-
   return (
-    <section 
-      style={{
-        width: '100%',
-        maxWidth: '1920px',
-        height: '1126px',
-        opacity: 1,
-        transform: 'rotate(0deg)',
-      }}
-      className="relative w-full max-w-[1920px] mx-auto overflow-hidden bg-[#F8F5E8] flex flex-col justify-end h-[1126px]"
-    >
+    <section className="relative w-full max-w-[1920px] h-[1126px] opacity-100 rotate-0 mx-auto overflow-hidden bg-[#F8F5E8] flex flex-col justify-end">
       
-      {/* 1. Large Decorative Background Wordmark: A E R A — Exact Figma CSS */}
+      {/* 1. Large Decorative Background Wordmark: A E R A — 100% Tailwind CSS */}
       {wordmark && (
         <div 
-          style={{
-            position: 'absolute',
-            top: '70px',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            width: '1483px',
-            height: '484px',
-            textAlign: 'center',
-            pointerEvents: 'none',
-            userSelect: 'none',
-            zIndex: 0,
-            overflow: 'hidden',
-          }}
+          className="absolute top-[70px] left-1/2 -translate-x-1/2 w-[1483px] h-[484px] text-center pointer-events-none select-none z-0 overflow-hidden"
           aria-hidden="true"
         >
-          <span 
-            style={{
-              fontFamily: "'Cormorant Garamond', Georgia, serif",
-              fontWeight: 500,
-              fontSize: 'clamp(80px, 20.833vw, 400px)',
-              lineHeight: '100%',
-              letterSpacing: 'clamp(28px, 7.448vw, 143px)',
-              paddingLeft: 'clamp(28px, 7.448vw, 143px)',
-              textTransform: 'uppercase',
-              color: '#E8E2D0',
-              opacity: 0.85,
-              display: 'inline-block',
-              whiteSpace: 'nowrap',
-            }}
-          >
+          <span className="font-serif font-medium text-[clamp(80px,20.833vw,400px)] leading-[100%] tracking-[clamp(28px,7.448vw,143px)] pl-[clamp(28px,7.448vw,143px)] uppercase text-[#E8E2D0] opacity-85 inline-block whitespace-nowrap">
             {wordmark}
           </span>
         </div>
       )}
 
-      {/* 2. Desktop Models Image — Exact Figma CSS: width: 1273px; height: 926px; top: 200px; left: 326px; angle: 0deg; opacity: 1; */}
-      <div 
-        style={{
-          width: '1273px',
-          height: '926px',
-          top: '200px',
-          left: '326px',
-          opacity: 1,
-          transform: 'rotate(0deg)',
-        }}
-        className="hidden md:flex absolute items-end justify-center pointer-events-none z-10"
-      >
+      {/* 2. Desktop Models Image — 100% Tailwind CSS */}
+      <div className="hidden md:flex absolute top-[200px] left-[326px] w-[1273px] h-[926px] opacity-100 rotate-0 items-end justify-center pointer-events-none z-10">
         <img
           src={modelImage.src}
           alt={modelImage.alt}
-          style={{
-            width: '1000px',
-            height: '926px',
-            maxWidth: '1273px',
-            maxHeight: '926px',
-            objectFit: 'contain',
-            objectPosition: 'bottom center',
-            opacity: 1,
-            transform: 'rotate(0deg)',
-            marginRight: '30%',
-            marginBottom: '27%',
-          }}
-          className="w-full h-full select-none"
+          className="w-[1000px] h-[926px] max-w-[1273px] max-h-[926px] object-contain object-bottom opacity-100 rotate-0 mr-[30%] mb-[27%] select-none"
           loading="eager"
         />
       </div>
@@ -129,19 +67,17 @@ export default function Hero({
           )}
         </div>
 
-        {/* Bottom-Right: Seasonal Tag & Editorial Headline */}
-        <div className="pointer-events-auto text-left self-end">
-          {/* Overhead Tag */}
+        {/* Bottom-Right: Seasonal Tag & Editorial Headline (Right-aligned as in Image 2) */}
+        <div className="pointer-events-auto text-right self-end flex flex-col items-end">
+          {/* Overhead Seasonal Tag */}
           {seasonTag && (
-            <div className="mb-1 lg:mb-1.5 xl:mb-2">
-              <span className="text-[#97173a] text-[10.5px] lg:text-[11.5px] xl:text-[12px] font-sans font-semibold tracking-[0.28em] uppercase block">
-                {seasonTag}
-              </span>
+            <div className="font-poppins font-normal text-[14px] leading-[150%] tracking-[5px] uppercase text-[#97173a] opacity-100 rotate-0 mb-1.5 lg:mb-2 xl:mb-2.5 select-text whitespace-nowrap text-right">
+              {seasonTag}
             </div>
           )}
 
-          {/* Main Headline (Two Lines, Left-Aligned) */}
-          <h1 className="font-serif font-bold text-[#97173a] text-[56px] md:text-[68px] lg:text-[84px] xl:text-[98px] 2xl:text-[104px] leading-[0.88] uppercase tracking-[-0.015em] select-none m-0">
+          {/* Main Headline (Two Lines, Right-Aligned) */}
+          <h1 className="font-serif font-bold text-[#97173a] text-[56px] md:text-[68px] lg:text-[84px] xl:text-[98px] 2xl:text-[104px] leading-[0.88] uppercase tracking-[-0.015em] select-none m-0 text-right">
             <span className="block">{headline.line1}</span>
             <span className="block">{headline.line2}</span>
           </h1>
@@ -155,7 +91,7 @@ export default function Hero({
         {/* Top Tag & Title */}
         <div className="pointer-events-auto text-center z-20 pt-1">
           {seasonTag && (
-            <span className="text-[#97173a] text-[10px] font-sans font-semibold tracking-[0.26em] uppercase block mb-1">
+            <span className="font-poppins font-normal text-[11px] leading-[150%] tracking-[4px] uppercase text-[#97173a] opacity-100 rotate-0 block mb-1 text-center">
               {seasonTag}
             </span>
           )}

@@ -24,15 +24,7 @@ export default function Navbar({
   }
 
   return (
-    <header 
-      style={{
-        width: '100%',
-        maxWidth: '1920px',
-        height: '78px',
-        opacity: 1,
-      }}
-      className="relative w-full max-w-[1920px] mx-auto h-[78px] bg-[#F8F5E8] border-b border-[#ECE7D6]/60 sticky top-0 z-30 transition-all flex items-center"
-    >
+    <header className="relative w-full max-w-[1920px] h-[78px] opacity-100 mx-auto bg-[#F8F5E8] border-b border-[#ECE7D6]/60 sticky top-0 z-30 transition-all flex items-center">
       <div className="w-full h-[78px] px-6 sm:px-8 md:px-10 lg:px-6 xl:px-16 flex items-center justify-between relative">
         
         {/* Left: Dynamic Navigation Links */}
@@ -66,34 +58,14 @@ export default function Navbar({
           </button>
         </div>
 
-        {/* Center: Dynamic Brand Logo (Exact Figma CSS: 96x36, left: 912px, top: 56px, Cormorant Garamond 600, 36px, letter-spacing: 0px) */}
+        {/* Center: Dynamic Brand Logo (Exact Figma CSS: 96x36, Cormorant Garamond 600, 36px, letter-spacing: 0px) */}
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto">
           <button
             onClick={() => setActiveNav('HOME')}
-            style={{
-              width: '96px',
-              height: '36px',
-              opacity: 1,
-            }}
-            className="cursor-pointer group flex items-center justify-center select-none"
+            className="w-[96px] h-[36px] opacity-100 cursor-pointer group flex items-center justify-center select-none"
             aria-label={`${brandName} Home`}
           >
-            <span
-              style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
-                fontWeight: 600,
-                fontSize: '36px',
-                lineHeight: '36px',
-                letterSpacing: '0px',
-                textTransform: 'uppercase',
-                width: '96px',
-                height: '36px',
-                display: 'inline-block',
-                textAlign: 'center',
-                opacity: 1,
-              }}
-              className="text-[#171515] group-hover:text-[#97173a] transition-colors leading-none"
-            >
+            <span className="font-serif font-semibold text-[36px] leading-[36px] tracking-[0px] uppercase w-[96px] h-[36px] inline-block text-center opacity-100 text-[#171515] group-hover:text-[#97173a] transition-colors">
               {brandName}
             </span>
           </button>
