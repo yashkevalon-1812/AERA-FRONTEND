@@ -1,3 +1,5 @@
+import heroImage from '../assets/hero.png'
+
 export const homeData = {
   hero: {
     wordmark: 'AERA',
@@ -15,7 +17,7 @@ export const homeData = {
       action: 'shop-now',
     },
     modelImage: {
-      src: '/hero_models_perfect.png',
+      src: heroImage,
       alt: 'AERA Autumn Winter 2026 Collection',
     },
   },

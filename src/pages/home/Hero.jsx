@@ -1,3 +1,5 @@
+import heroImage from '../../assets/hero.png'
+
 export default function Hero({
   wordmark = 'AERA',
   seasonTag = 'AUTUMN / WINTER 2026',
@@ -8,21 +10,26 @@ export default function Hero({
   ],
   buttonText = 'Shop Now',
   modelImage = {
-    src: '/hero.png',
+    src: heroImage,
     alt: 'AERA Autumn Winter 2026 Collection',
   },
   onShopNow,
 }) {
+  const imgSrc = typeof modelImage === 'string'
+    ? modelImage
+    : (modelImage?.src || heroImage)
+  const imgAlt = modelImage?.alt || 'AERA Autumn Winter 2026 Collection'
+
   return (
     <section 
       style={{
         width: '100%',
         maxWidth: '1920px',
-        height: '1013px',
+        height: '1126px',
         opacity: 1,
         transform: 'rotate(0deg)',
       }}
-      className="relative w-full max-w-[1920px] mx-auto overflow-hidden bg-[#F8F5E8] flex flex-col justify-end h-[1013px]"
+      className="relative w-full max-w-[1920px] mx-auto overflow-hidden bg-[#F8F5E8] flex flex-col justify-end h-[1126px]"
     >
       
       {/* 1. Large Decorative Background Wordmark: A E R A */}
