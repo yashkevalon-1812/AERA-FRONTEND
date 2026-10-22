@@ -82,7 +82,7 @@ export default function Hero({
           )}
 
           {/* Main Headline (Two Lines, Right-Aligned overlapping right model) */}
-          <h1 className="font-serif font-bold text-[#97173a] text-[48px] sm:text-[56px] md:text-[66px] lg:text-[78px] xl:text-[92px] 2xl:text-[100px] leading-[0.88] uppercase tracking-[-0.015em] select-none m-0 text-right">
+          <h1 className="font-playfair font-bold text-[#97173a] text-[52px] sm:text-[68px] md:text-[84px] lg:text-[100px] xl:text-[116px] 2xl:text-[108px] leading-[100%] uppercase tracking-[-0.015em] select-none m-0 text-right mb-[-35px] mr-[-10px]">
             <span className="block">{headline.line1}</span>
             <span className="block">{headline.line2}</span>
           </h1>
@@ -100,7 +100,7 @@ export default function Hero({
               {seasonTag}
             </span>
           )}
-          <h1 className="font-serif font-bold text-[#97173a] text-[34px] sm:text-[40px] leading-[0.92] uppercase tracking-tight m-0">
+          <h1 className="font-playfair font-bold text-[#97173a] text-[34px] sm:text-[42px] leading-[100%] uppercase tracking-tight m-0">
             {headline.line1} {headline.line2}
           </h1>
         </div>
