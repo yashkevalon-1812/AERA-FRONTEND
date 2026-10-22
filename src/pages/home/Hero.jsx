@@ -32,13 +32,38 @@ export default function Hero({
       className="relative w-full max-w-[1920px] mx-auto overflow-hidden bg-[#F8F5E8] flex flex-col justify-end h-[1126px]"
     >
       
-      {/* 1. Large Decorative Background Wordmark: A E R A */}
+      {/* 1. Large Decorative Background Wordmark: A E R A — Exact Figma CSS */}
       {wordmark && (
         <div 
-          className="absolute top-[8%] sm:top-[10%] md:top-[12%] lg:top-[13%] xl:top-[14%] left-1/2 -translate-x-1/2 w-full text-center select-none pointer-events-none z-0 overflow-hidden"
+          style={{
+            position: 'absolute',
+            top: '110px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            width: '100%',
+            textAlign: 'center',
+            pointerEvents: 'none',
+            userSelect: 'none',
+            zIndex: 0,
+            overflow: 'hidden',
+          }}
           aria-hidden="true"
         >
-          <span className="font-serif text-[24vw] sm:text-[22vw] md:text-[20vw] lg:text-[19vw] xl:text-[290px] 2xl:text-[320px] font-normal tracking-[0.24em] text-[#E8E2D0] uppercase leading-none block whitespace-nowrap opacity-85">
+          <span 
+            style={{
+              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontWeight: 500,
+              fontSize: 'clamp(80px, 20.833vw, 400px)',
+              lineHeight: '100%',
+              letterSpacing: 'clamp(28px, 7.448vw, 143px)',
+              paddingLeft: 'clamp(28px, 7.448vw, 143px)',
+              textTransform: 'uppercase',
+              color: '#E8E2D0',
+              opacity: 0.85,
+              display: 'inline-block',
+              whiteSpace: 'nowrap',
+            }}
+          >
             {wordmark}
           </span>
         </div>

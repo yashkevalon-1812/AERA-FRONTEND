@@ -12,30 +12,36 @@ const puppeteer = require('puppeteer-core');
 
   const specs = await page.evaluate(() => {
     const hero = document.querySelector('section');
+    const wordmarkSpan = hero.querySelector('div[style*="position: absolute"] span');
     const heroImgContainer = hero.querySelector('div[style*="1273px"]');
     const heroImg = hero.querySelector('img');
     const navbar = document.querySelector('header');
     const logo = navbar.querySelector('button[style*="96px"]');
     const logoSpan = logo.querySelector('span');
 
+    const wmStyle = wordmarkSpan ? window.getComputedStyle(wordmarkSpan) : {};
+
     return {
+      backgroundWordmark: {
+        fontFamily: wmStyle.fontFamily,
+        fontWeight: wmStyle.fontWeight,
+        fontSize: wmStyle.fontSize,
+        lineHeight: wmStyle.lineHeight,
+        letterSpacing: wmStyle.letterSpacing,
+        textTransform: wmStyle.textTransform,
+        offsetWidth: wordmarkSpan ? wordmarkSpan.offsetWidth : null,
+        offsetHeight: wordmarkSpan ? wordmarkSpan.offsetHeight : null,
+      },
       heroSection: {
         inlineStyle: hero.getAttribute('style'),
         offsetWidth: hero.offsetWidth,
         offsetHeight: hero.offsetHeight,
-        computedWidth: window.getComputedStyle(hero).width,
-        computedHeight: window.getComputedStyle(hero).height,
-        opacity: window.getComputedStyle(hero).opacity,
-        transform: window.getComputedStyle(hero).transform
       },
       heroImageContainer: {
-        inlineStyle: heroImgContainer ? heroImgContainer.getAttribute('style') : null,
         offsetWidth: heroImgContainer ? heroImgContainer.offsetWidth : null,
         offsetHeight: heroImgContainer ? heroImgContainer.offsetHeight : null,
         computedTop: heroImgContainer ? window.getComputedStyle(heroImgContainer).top : null,
         computedLeft: heroImgContainer ? window.getComputedStyle(heroImgContainer).left : null,
-        opacity: heroImgContainer ? window.getComputedStyle(heroImgContainer).opacity : null,
-        transform: heroImgContainer ? window.getComputedStyle(heroImgContainer).transform : null
       },
       heroImg: {
         offsetWidth: heroImg ? heroImg.offsetWidth : null,
@@ -46,7 +52,6 @@ const puppeteer = require('puppeteer-core');
       navbar: {
         offsetWidth: navbar.offsetWidth,
         offsetHeight: navbar.offsetHeight,
-        computedHeight: window.getComputedStyle(navbar).height
       },
       logo: {
         offsetWidth: logo.offsetWidth,
@@ -54,8 +59,6 @@ const puppeteer = require('puppeteer-core');
         fontFamily: window.getComputedStyle(logoSpan).fontFamily,
         fontSize: window.getComputedStyle(logoSpan).fontSize,
         lineHeight: window.getComputedStyle(logoSpan).lineHeight,
-        letterSpacing: window.getComputedStyle(logoSpan).letterSpacing,
-        textTransform: window.getComputedStyle(logoSpan).textTransform
       }
     };
   });
@@ -63,6 +66,6 @@ const puppeteer = require('puppeteer-core');
   console.log('=== EXACT MEASURED SPECS ===');
   console.log(JSON.stringify(specs, null, 2));
 
-  await page.screenshot({ path: 'C:/Users/divye/.gemini/antigravity/brain/a40e8476-2329-48c2-8837-b12cf6408663/hero_1920x1126_verified.png' });
+  await page.screenshot({ path: 'C:/Users/divye/.gemini/antigravity/brain/a40e8476-2329-48c2-8837-b12cf6408663/hero_wordmark_verified.png' });
   await browser.close();
 })();
