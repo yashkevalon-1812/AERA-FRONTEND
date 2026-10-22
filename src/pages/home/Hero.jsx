@@ -49,8 +49,8 @@ export default function Hero({
       <div className="hidden md:flex relative z-20 w-full max-w-[1920px] mx-auto px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 pb-2.5 sm:pb-3 md:pb-3.5 lg:pb-4 xl:pb-5 items-end justify-between pointer-events-none">
         
         {/* Bottom-Left: Supporting Copy & Shop Now Button */}
-        <div className="pointer-events-auto max-w-[210px] sm:max-w-[230px] lg:max-w-[260px] xl:max-w-[300px] text-left mb-2 sm:mb-2.5 md:mb-3 lg:mb-3.5">
-          <div className="text-[#97173a] text-[11.5px] sm:text-[12px] lg:text-[13px] xl:text-[14px] font-sans font-medium leading-[1.38] tracking-normal mb-2.5 lg:mb-3.5 select-text">
+        <div className="pointer-events-auto max-w-[360px] lg:max-w-[400px] xl:max-w-[450px] text-left mb-2 sm:mb-2.5 md:mb-3 lg:mb-3.5">
+          <div className="text-[#97173a] font-inter font-normal text-[17px] leading-[24px] tracking-normal mb-3 lg:mb-3.5 select-text">
             {Array.isArray(description) ? (
               description.map((line, idx) => (
                 <span key={idx} className="block">
@@ -117,7 +117,7 @@ export default function Hero({
 
         {/* Bottom Copy & Button */}
         <div className="pointer-events-auto text-center z-20">
-          <div className="text-[#97173a] text-[12px] font-sans font-medium leading-[1.35] mb-2.5">
+          <div className="text-[#97173a] font-inter font-normal text-[16px] sm:text-[18px] md:text-[20px] leading-[22px] md:leading-[24px] mb-2.5">
             {Array.isArray(description) ? (
               description.map((line, idx) => (
                 <span key={idx} className="block">
