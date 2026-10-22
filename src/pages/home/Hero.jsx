@@ -8,42 +8,71 @@ export default function Hero({
   ],
   buttonText = 'Shop Now',
   modelImage = {
-    src: '/hero_models_perfect.png',
+    src: '/hero.png',
     alt: 'AERA Autumn Winter 2026 Collection',
   },
   onShopNow,
 }) {
   return (
-    <section className="relative w-full overflow-hidden bg-[#F8F5E8] flex flex-col justify-end min-h-[600px] sm:min-h-[700px] md:min-h-[760px] lg:min-h-[calc(100vh-88px)] max-h-[1080px]">
+    <section 
+      style={{
+        width: '100%',
+        maxWidth: '1920px',
+        height: '1013px',
+        opacity: 1,
+        transform: 'rotate(0deg)',
+      }}
+      className="relative w-full max-w-[1920px] mx-auto overflow-hidden bg-[#F8F5E8] flex flex-col justify-end h-[1013px]"
+    >
       
-      {/* 1. Dynamic Decorative Background Wordmark */}
+      {/* 1. Large Decorative Background Wordmark: A E R A */}
       {wordmark && (
         <div 
-          className="absolute top-[6%] sm:top-[9%] md:top-[12%] lg:top-[13%] left-1/2 -translate-x-1/2 w-full text-center select-none pointer-events-none z-0 overflow-hidden"
+          className="absolute top-[8%] sm:top-[10%] md:top-[12%] lg:top-[13%] xl:top-[14%] left-1/2 -translate-x-1/2 w-full text-center select-none pointer-events-none z-0 overflow-hidden"
           aria-hidden="true"
         >
-          <span className="font-serif text-[28vw] sm:text-[24vw] md:text-[21vw] lg:text-[20vw] xl:text-[280px] 2xl:text-[320px] font-normal tracking-[0.24em] text-[#E8E2D0] uppercase leading-none block whitespace-nowrap opacity-85">
+          <span className="font-serif text-[24vw] sm:text-[22vw] md:text-[20vw] lg:text-[19vw] xl:text-[290px] 2xl:text-[320px] font-normal tracking-[0.24em] text-[#E8E2D0] uppercase leading-none block whitespace-nowrap opacity-85">
             {wordmark}
           </span>
         </div>
       )}
 
-      {/* 2. Desktop Models (Centered & Anchored to the Bottom) */}
-      <div className="hidden md:flex absolute inset-x-0 bottom-0 top-[8%] lg:top-[5%] items-end justify-center pointer-events-none z-10">
+      {/* 2. Desktop Models Image — Exact Figma CSS: width: 1273px; height: 926px; top: 200px; left: 326px; angle: 0deg; opacity: 1; */}
+      <div 
+        style={{
+          width: '1273px',
+          height: '926px',
+          top: '200px',
+          left: '326px',
+          opacity: 1,
+          transform: 'rotate(0deg)',
+        }}
+        className="hidden md:flex absolute items-end justify-center pointer-events-none z-10"
+      >
         <img
           src={modelImage.src}
           alt={modelImage.alt}
-          className="h-[88%] lg:h-[93%] xl:h-[96%] w-auto max-w-[84%] lg:max-w-[78%] xl:max-w-[1160px] object-contain object-bottom select-none"
+          style={{
+            width: '1273px',
+            height: '926px',
+            maxWidth: '1273px',
+            maxHeight: '926px',
+            objectFit: 'contain',
+            objectPosition: 'bottom center',
+            opacity: 1,
+            transform: 'rotate(0deg)',
+          }}
+          className="w-full h-full select-none"
           loading="eager"
         />
       </div>
 
-      {/* 3. Desktop & Tablet Overlays (>= md) — Matching Figma Reference 1:1 */}
-      <div className="hidden md:flex relative z-20 w-full max-w-[1720px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20 pb-8 md:pb-12 lg:pb-14 items-end justify-between pointer-events-none">
+      {/* 3. Desktop & Tablet Overlays (>= md) */}
+      <div className="hidden md:flex relative z-20 w-full max-w-[1840px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20 pb-8 md:pb-10 lg:pb-12 xl:pb-14 items-end justify-between pointer-events-none">
         
         {/* Bottom-Left: Supporting Copy & Shop Now Button */}
-        <div className="pointer-events-auto max-w-[280px] lg:max-w-[320px] xl:max-w-[340px] text-left">
-          <div className="text-[#97173a] text-[13px] lg:text-[14px] font-sans font-medium leading-[1.42] tracking-normal mb-3.5 select-text">
+        <div className="pointer-events-auto max-w-[280px] lg:max-w-[320px] xl:max-w-[350px] text-left">
+          <div className="text-[#97173a] text-[13px] lg:text-[14px] xl:text-[14.5px] font-sans font-medium leading-[1.42] tracking-normal mb-3.5 select-text">
             {Array.isArray(description) ? (
               description.map((line, idx) => (
                 <span key={idx} className="block">
@@ -58,7 +87,7 @@ export default function Hero({
           {buttonText && (
             <button
               onClick={onShopNow}
-              className="inline-flex items-center justify-center bg-[#97173a] hover:bg-[#7e122f] text-white text-[12.5px] font-semibold px-6 py-2.5 rounded-lg transition-all duration-200 shadow-xs hover:shadow-md cursor-pointer tracking-normal"
+              className="inline-flex items-center justify-center bg-[#97173a] hover:bg-[#7e122f] text-white text-[12px] xl:text-[12.5px] font-semibold px-6 xl:px-7 py-2.5 rounded-lg transition-all duration-200 shadow-xs hover:shadow-md cursor-pointer tracking-normal"
             >
               {buttonText}
             </button>
@@ -69,15 +98,15 @@ export default function Hero({
         <div className="pointer-events-auto text-left self-end">
           {/* Overhead Tag */}
           {seasonTag && (
-            <div className="mb-1.5 lg:mb-2">
-              <span className="text-[#97173a] text-[11px] lg:text-[12px] font-sans font-semibold tracking-[0.28em] uppercase block">
+            <div className="mb-1 lg:mb-1.5 xl:mb-2">
+              <span className="text-[#97173a] text-[10.5px] lg:text-[11.5px] xl:text-[12px] font-sans font-semibold tracking-[0.28em] uppercase block">
                 {seasonTag}
               </span>
             </div>
           )}
 
           {/* Main Headline (Two Lines, Left-Aligned) */}
-          <h1 className="font-serif font-bold text-[#97173a] text-[58px] md:text-[68px] lg:text-[84px] xl:text-[98px] 2xl:text-[112px] leading-[0.88] uppercase tracking-[-0.015em] select-none m-0">
+          <h1 className="font-serif font-bold text-[#97173a] text-[56px] md:text-[68px] lg:text-[84px] xl:text-[98px] 2xl:text-[104px] leading-[0.88] uppercase tracking-[-0.015em] select-none m-0">
             <span className="block">{headline.line1}</span>
             <span className="block">{headline.line2}</span>
           </h1>
@@ -86,7 +115,7 @@ export default function Hero({
       </div>
 
       {/* 4. Mobile Layout (< md): Clean adaptive flow without overlapping faces or clothing */}
-      <div className="flex md:hidden flex-col items-center justify-between min-h-[calc(100vh-95px)] relative z-20 px-5 pt-3 pb-6 pointer-events-none">
+      <div className="flex md:hidden flex-col items-center justify-between min-h-[calc(100vh-113px)] relative z-20 px-5 pt-3 pb-6 pointer-events-none">
         
         {/* Top Tag & Title */}
         <div className="pointer-events-auto text-center z-20 pt-1">

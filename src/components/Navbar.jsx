@@ -24,18 +24,26 @@ export default function Navbar({
   }
 
   return (
-    <header className="w-full bg-[#F8F5E8] border-b border-[#ECE7D6]/60 sticky top-0 z-30 transition-all">
-      <div className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-12 h-16 sm:h-[68px] flex items-center justify-between">
+    <header 
+      style={{
+        width: '100%',
+        maxWidth: '1920px',
+        height: '78px',
+        opacity: 1,
+      }}
+      className="relative w-full max-w-[1920px] mx-auto h-[78px] bg-[#F8F5E8] border-b border-[#ECE7D6]/60 sticky top-0 z-30 transition-all flex items-center"
+    >
+      <div className="w-full h-[78px] px-6 sm:px-8 md:px-10 lg:px-6 xl:px-16 flex items-center justify-between relative">
         
         {/* Left: Dynamic Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-7 xl:gap-8 flex-1">
+        <nav className="hidden lg:flex items-center gap-3.5 xl:gap-8 flex-1">
           {navLinks.map((link) => {
             const isActive = activeNav === link.id
             return (
               <button
                 key={link.id}
                 onClick={() => setActiveNav(link.id)}
-                className={`text-[12.5px] font-medium tracking-[0.16em] uppercase transition-colors duration-200 cursor-pointer ${
+                className={`text-[11.5px] xl:text-[12.5px] font-medium tracking-[0.10em] xl:tracking-[0.16em] uppercase transition-colors duration-200 cursor-pointer ${
                   isActive
                     ? 'text-[#97173a] font-semibold'
                     : 'text-[#171515] hover:text-[#97173a]'
@@ -58,13 +66,34 @@ export default function Navbar({
           </button>
         </div>
 
-        {/* Center: Dynamic Brand Logo */}
-        <div className="flex-shrink-0 text-center">
+        {/* Center: Dynamic Brand Logo (Exact Figma CSS: 96x36, left: 912px, top: 56px, Cormorant Garamond 600, 36px, letter-spacing: 0px) */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto">
           <button
             onClick={() => setActiveNav('HOME')}
-            className="cursor-pointer group inline-block"
+            style={{
+              width: '96px',
+              height: '36px',
+              opacity: 1,
+            }}
+            className="cursor-pointer group flex items-center justify-center select-none"
+            aria-label={`${brandName} Home`}
           >
-            <span className="font-serif text-[28px] sm:text-[32px] tracking-[0.26em] font-semibold text-[#171515] group-hover:text-[#97173a] transition-colors leading-none">
+            <span
+              style={{
+                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontWeight: 600,
+                fontSize: '36px',
+                lineHeight: '36px',
+                letterSpacing: '0px',
+                textTransform: 'uppercase',
+                width: '96px',
+                height: '36px',
+                display: 'inline-block',
+                textAlign: 'center',
+                opacity: 1,
+              }}
+              className="text-[#171515] group-hover:text-[#97173a] transition-colors leading-none"
+            >
               {brandName}
             </span>
           </button>
@@ -82,7 +111,7 @@ export default function Navbar({
               value={searchValue}
               onChange={(e) => setSearchValue(e.target.value)}
               placeholder="Search.."
-              className="w-32 md:w-44 lg:w-48 xl:w-52 h-8 sm:h-[34px] pl-3.5 pr-8 bg-[#F3EFE0]/80 border border-[#E4DEC9] rounded-full text-xs font-sans text-[#171515] placeholder-[#9E9788] focus:outline-none focus:border-[#97173a] focus:bg-white transition-all"
+              className="w-32 md:w-44 lg:w-48 xl:w-52 h-[34px] pl-3.5 pr-8 bg-[#F3EFE0]/80 border border-[#E4DEC9] rounded-full text-xs font-sans text-[#171515] placeholder-[#9E9788] focus:outline-none focus:border-[#97173a] focus:bg-white transition-all"
             />
             <button
               type="submit"
