@@ -1,13 +1,16 @@
 import Hero from './Hero'
 import NewSeason from './NewSeason'
+import NewArrivals from './NewArrivals'
 import { homeData as defaultHomeData } from '../../data/homeData'
 
 export default function Home({
   data = defaultHomeData,
   onShopNow,
   onExploreNewSeason,
+  onViewAllArrivals,
+  onArrivalItemClick,
 }) {
-  const { hero, newSeason } = data || {}
+  const { hero, newSeason, newArrivals } = data || {}
 
   return (
     <div className="w-full flex-1 flex flex-col">
@@ -32,6 +35,17 @@ export default function Home({
         rackImage={newSeason?.rackImage}
         coatImage={newSeason?.coatImage}
         onExplore={onExploreNewSeason}
+      />
+
+      {/* 3. New Arrivals Carousel Section */}
+      <NewArrivals
+        title={newArrivals?.title}
+        tagline={newArrivals?.tagline}
+        viewAll={newArrivals?.viewAll}
+        activeSlide={newArrivals?.activeSlide}
+        items={newArrivals?.items}
+        onViewAll={onViewAllArrivals}
+        onItemClick={onArrivalItemClick}
       />
 
       {/* All upcoming Home page sections will be imported and added here */}
