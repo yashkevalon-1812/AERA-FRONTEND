@@ -26,7 +26,7 @@ export default function Hero({
       {/* 1. Large Decorative Background Wordmark: A E R A — Exact Proportional Scale */}
       {wordmark && (
         <div 
-          className="absolute top-[10%] left-1/2 -translate-x-1/2 w-full max-w-[1800px] text-center pointer-events-none select-none z-0 overflow-hidden"
+          className="absolute top-[15%] left-1/2 -translate-x-1/2 w-full max-w-[1800px] text-center pointer-events-none select-none z-0 overflow-hidden"
           aria-hidden="true"
         >
           <span className="font-serif font-medium text-[clamp(65px,19vw,360px)] leading-[100%] tracking-[clamp(24px,7.8vw,155px)] pl-[clamp(24px,7.8vw,155px)] uppercase text-[#E8E2D0] opacity-85 inline-block whitespace-nowrap">
@@ -36,17 +36,17 @@ export default function Hero({
       )}
 
       {/* 2. Desktop Models Image — Grounded on bottom edge, horizontally centered */}
-      <div className="hidden md:flex absolute bottom-0 left-1/2 -translate-x-1/2 h-full max-h-full 2xl:h-auto 2xl:max-h-none w-max max-w-[95%] 2xl:w-[950px] 2xl:max-w-none items-end justify-center pointer-events-none z-10">
+      <div className="relative z-10 w-full h-full flex items-end justify-center pointer-events-none top-15">
         <img
           src={imgSrc}
           alt={imgAlt}
-          className="h-full 2xl:h-auto w-auto 2xl:w-full object-contain object-bottom select-none"
+          className="w-auto h-full max-h-full object-contain object-bottom select-none"
           loading="eager"
         />
       </div>
 
       {/* 3. Desktop & Tablet Overlays (>= md) — Pixel-aligned to Reference Composition */}
-      <div className="hidden md:flex relative z-20 w-full max-w-[1920px] mx-auto px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 pb-2.5 sm:pb-3 md:pb-3.5 lg:pb-4 xl:pb-5 items-end justify-between pointer-events-none">
+      <div className="hidden md:flex absolute inset-x-0 bottom-0 z-20 w-full max-w-[1920px] mx-auto px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 pb-2.5 sm:pb-3 md:pb-3.5 lg:pb-4 xl:pb-5 items-end justify-between pointer-events-none">
         
         {/* Bottom-Left: Supporting Copy & Shop Now Button */}
         <div className="pointer-events-auto max-w-[360px] lg:max-w-[400px] xl:max-w-[450px] text-left mb-2 sm:mb-2.5 md:mb-3 lg:mb-12">
@@ -82,7 +82,7 @@ export default function Hero({
           )}
 
           {/* Main Headline (Two Lines, Right-Aligned overlapping right model) */}
-          <h1 className="font-playfair font-bold text-[#97173a] text-[52px] sm:text-[68px] md:text-[84px] lg:text-[100px] xl:text-[116px] 2xl:text-[108px] leading-[100%] uppercase tracking-[-0.015em] select-none m-0 text-right mb-[-35px] mr-[-10px]">
+          <h1 className="font-playfair font-bold text-[#97173a] text-[52px] sm:text-[68px] md:text-[84px] lg:text-[100px] xl:text-[116px] 2xl:text-[108px] leading-[100%] uppercase tracking-[-0.015em] select-none m-0 text-right mb-[-29px] mr-[-10px]">
             <span className="block">{headline.line1}</span>
             <span className="block">{headline.line2}</span>
           </h1>
