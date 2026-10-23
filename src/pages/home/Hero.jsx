@@ -40,7 +40,7 @@ export default function Hero({
         <img
           src={imgSrc}
           alt={imgAlt}
-          className="w-auto h-full max-h-full object-contain object-bottom select-none"
+          className="relative w-auto h-full max-h-full object-contain object-bottom select-none"
           loading="eager"
         />
       </div>
