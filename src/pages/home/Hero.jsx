@@ -36,7 +36,7 @@ export default function Hero({
       )}
 
       {/* 2. Desktop Models Image — Grounded on bottom edge, horizontally centered */}
-      <div className="hidden md:flex absolute bottom-[-65px] left-1/2 -translate-x-1/2 h-[725px] w-auto max-w-[85%] items-end justify-center pointer-events-none z-10">
+      <div className="hidden md:flex absolute bottom-0 left-1/2 -translate-x-1/2 h-[96%] w-auto max-w-[85%] items-end justify-center pointer-events-none z-10">
         <img
           src={imgSrc}
           alt={imgAlt}
