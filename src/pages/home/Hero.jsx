@@ -76,7 +76,7 @@ export default function Hero({
         <div className="pointer-events-auto text-right flex flex-col items-end">
           {/* Overhead Seasonal Tag */}
           {seasonTag && (
-            <div className="font-poppins font-normal text-[10.5px] sm:text-[11.5px] md:text-[12px] lg:text-[13px] xl:text-[14px] leading-[150%] tracking-[4px] lg:tracking-[5px] uppercase text-[#97173a] opacity-100 rotate-0 mb-1 lg:mb-1.5 xl:mb-2 select-text whitespace-nowrap text-right">
+            <div className="font-poppins font-normal text-[10px] sm:text-[11.5px] md:text-[12px] lg:text-[13px] xl:text-[14px] leading-[150%] tracking-[4px] lg:tracking-[5px] uppercase text-[#97173a] opacity-100 rotate-0 mb-1 lg:mb-1.5 xl:mb-2 select-text whitespace-nowrap text-right">
               {seasonTag}
             </div>
           )}
