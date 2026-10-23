@@ -21,22 +21,22 @@ export default function Hero({
   const imgAlt = modelImage?.alt || 'AERA Autumn Winter 2026 Collection'
 
   return (
-    <section className="relative w-full max-w-[1920px] mx-auto overflow-hidden bg-[#F8F5E8] aspect-[1024/481] min-h-[480px] max-h-[920px] flex flex-col justify-end">
+    <section className="relative w-full max-w-[1920px] mx-auto overflow-hidden bg-[#F8F5E8] aspect-[1024/481] min-h-[580px] max-h-[1000px] flex flex-col justify-end">
       
       {/* 1. Large Decorative Background Wordmark: A E R A — Exact Proportional Scale */}
       {wordmark && (
         <div 
-          className="absolute top-[8%] left-1/2 -translate-x-1/2 w-full max-w-[1550px] text-center pointer-events-none select-none z-0 overflow-hidden"
+          className="absolute top-[10%] left-1/2 -translate-x-1/2 w-full max-w-[1800px] text-center pointer-events-none select-none z-0 overflow-hidden"
           aria-hidden="true"
         >
-          <span className="font-serif font-medium text-[clamp(65px,19vw,360px)] leading-[100%] tracking-[clamp(22px,7.2vw,140px)] pl-[clamp(22px,7.2vw,140px)] uppercase text-[#E8E2D0] opacity-85 inline-block whitespace-nowrap">
+          <span className="font-serif font-medium text-[clamp(65px,19vw,360px)] leading-[100%] tracking-[clamp(24px,7.8vw,155px)] pl-[clamp(24px,7.8vw,155px)] uppercase text-[#E8E2D0] opacity-85 inline-block whitespace-nowrap">
             {wordmark}
           </span>
         </div>
       )}
 
       {/* 2. Desktop Models Image — Grounded on bottom edge, horizontally centered */}
-      <div className="hidden md:flex absolute bottom-0 left-1/2 -translate-x-1/2 h-[96%] w-auto max-w-[85%] items-end justify-center pointer-events-none z-10">
+      <div className="hidden md:flex absolute bottom-0 top-15 left-1/2 -translate-x-1/2 h-[92%] w-auto max-w-[85%] w-full items-end justify-center pointer-events-none z-10">
         <img
           src={imgSrc}
           alt={imgAlt}
