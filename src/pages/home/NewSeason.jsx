@@ -60,7 +60,7 @@ export default function NewSeason({
             aria-hidden="true"
           >
             <span
-              className="font-serif text-[#97173a] text-[10px] md:text-[11px] lg:text-[13px] xl:text-[15px] 2xl:text-[17px] tracking-[0.22em] uppercase whitespace-nowrap block [writing-mode:vertical-rl] rotate-180"
+              className="font-serif text-[#97173a] text-[10px] md:text-[11px] lg:text-[13px] xl:text-[15px] 2xl:text-[20px] tracking-[0.22em] uppercase whitespace-nowrap block [writing-mode:vertical-rl] rotate-180 font-weight-[700] leading-[1.2] text-left"
             >
               {verticalTag}
             </span>
@@ -69,8 +69,8 @@ export default function NewSeason({
 
         {/* 1C. Top-Right Editorial Tag ("NEW SEASON NEW STYLE") */}
         {headerTag && (
-          <div className="absolute right-[4.1%] top-[6.8%] z-10 text-right pointer-events-none select-none">
-            <span className="font-serif text-[#97173a] text-[10px] md:text-[10.5px] lg:text-[12px] xl:text-[13.5px] 2xl:text-[15px] tracking-[0.16em] uppercase whitespace-nowrap">
+          <div className="absolute right-[4.1%] top-[6.8%] z-10 font-bold text-right pointer-events-none select-none">
+            <span className="font-serif text-[#97173a] text-[10px] md:text-[10.5px] lg:text-[12px] xl:text-[13.5px] 2xl:text-[18px] tracking-[0.16em] uppercase whitespace-nowrap  font-weight-[700]">
               {headerTag}
             </span>
           </div>
