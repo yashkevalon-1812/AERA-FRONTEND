@@ -36,11 +36,11 @@ export default function Hero({
       )}
 
       {/* 2. Desktop Models Image — Grounded on bottom edge, horizontally centered */}
-      <div className="hidden md:flex absolute bottom-0 top-15 left-1/2 -translate-x-1/2 h-[92%] w-auto max-w-[85%] w-full items-end justify-center pointer-events-none z-10">
+      <div className="hidden md:flex absolute bottom-0 left-1/2 -translate-x-1/2 h-full max-h-full 2xl:h-auto 2xl:max-h-none w-max max-w-[95%] 2xl:w-[950px] 2xl:max-w-none items-end justify-center pointer-events-none z-10">
         <img
           src={imgSrc}
           alt={imgAlt}
-          className="h-full w-auto max-w-none object-contain object-bottom select-none"
+          className="h-full 2xl:h-auto w-auto 2xl:w-full object-contain object-bottom select-none"
           loading="eager"
         />
       </div>
