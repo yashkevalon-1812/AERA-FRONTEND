@@ -8,6 +8,15 @@ import card3Image from '../assets/new-arrivals/card-3.jpg'
 import card4Image from '../assets/new-arrivals/card-4.jpg'
 import card5Image from '../assets/new-arrivals/card-5.jpg'
 
+import sitImage from '../assets/art-of-dressing/sit.jpg'
+import skirtImage from '../assets/art-of-dressing/skirt.jpg'
+import coffeeImage from '../assets/art-of-dressing/coffee.jpg'
+import tallImage from '../assets/art-of-dressing/tall.jpg'
+
+import bottomsImage from '../assets/shop-the-edit/bottoms.jpg'
+import dressesImage from '../assets/shop-the-edit/dresses.jpg'
+import topsImage from '../assets/shop-the-edit/tops.jpg'
+
 export const homeData = {
   hero: {
     wordmark: 'AERA',
@@ -39,16 +48,16 @@ export const homeData = {
     description:
       'Textured layers, relaxed tailoring and everyday silhouettes designed for colder days.',
     button: {
-      text: 'Explore New Collection',
-      link: '#new-collection',
+      text: 'Explore Collection',
+      link: '#collection',
     },
     rackImage: {
       src: rackModelImage,
-      alt: 'Woman posing next to clothing rack in olive jumpsuit',
+      alt: 'Model in olive silk dress standing next to a minimalist clothing rack with neutral garments on wooden hangers',
     },
     coatImage: {
       src: coatModelImage,
-      alt: 'Model in grey double-breasted coat',
+      alt: 'Model wearing a tailored dark wool trench coat with structured lapels standing against a textured limestone wall',
     },
   },
   newArrivals: {
@@ -63,18 +72,18 @@ export const homeData = {
       {
         id: 1,
         image: card1Image,
-        alt: 'Model posing in cream mock neck top and black wide-leg trousers',
+        alt: 'Model in beige knitted high-neck sweater with tailored cream trousers in minimalist studio',
         category: 'For Her',
-        title: 'Pleated Trouser',
-        link: '#shop-trouser',
+        title: 'High-Neck Cashmere',
+        link: '#shop-cashmere',
       },
       {
         id: 2,
         image: card2Image,
-        alt: 'Couple modeling matching white oversized graphic t-shirts with cargo shorts',
-        category: 'For Couple',
-        title: 'Oversized Tshirt',
-        link: '#shop-oversized-tshirt',
+        alt: 'Model in charcoal double-breasted oversized tailored wool coat walking on city pavement',
+        category: 'New Season',
+        title: 'Tailored Wool Coat',
+        link: '#shop-coat',
       },
       {
         id: 3,
@@ -99,6 +108,73 @@ export const homeData = {
         category: 'For Him',
         title: 'Linen Button-down',
         link: '#shop-linen',
+      },
+    ],
+  },
+  artOfDressing: {
+    eyebrow: 'A CONSIDERED WARDROBE',
+    title: {
+      line1: 'THE ART',
+      line2: 'OF DRESSING',
+    },
+    quote: '“Fashion is not about more. It’s about finding what feels right and looks good on you.”',
+    button: {
+      text: 'DISCOVER OUR STORY',
+      link: '#story',
+    },
+    images: {
+      sit: { src: sitImage, alt: 'Woman in brown leather jacket and wide blue jeans' },
+      skirt: { src: skirtImage, alt: 'Model in brown bomber jacket and white bubble mini skirt' },
+      coffee: { src: coffeeImage, alt: 'Woman holding coffee cup and brown suede handbag' },
+      tall: { src: tallImage, alt: 'Model in white top and baggy blue jeans with hands in hair' },
+    },
+  },
+  brandTicker: {
+    brands: [
+      { name: 'MANGO', style: 'font-sans font-bold tracking-[0.2em] text-[13px] sm:text-[15px] md:text-[17px]' },
+      { name: 'H&M', style: 'font-serif italic font-semibold tracking-wider text-[16px] sm:text-[19px] md:text-[22px]' },
+      { name: 'Bershka', style: 'font-sans font-medium tracking-wide text-[13px] sm:text-[15px] md:text-[16px]' },
+      { name: 'ONLY', style: 'font-sans font-black tracking-tight text-[15px] sm:text-[17px] md:text-[19px]' },
+      { name: 'NEXT', style: 'font-sans font-light tracking-[0.26em] text-[12px] sm:text-[14px] md:text-[15px]' },
+      { name: 'COS', style: 'font-sans font-bold tracking-[0.3em] text-[13px] sm:text-[15px] md:text-[17px]' },
+    ],
+  },
+  shopTheEdit: {
+    title: {
+      line1: 'SHOP',
+      line2: 'THE EDIT',
+    },
+    description: [
+      'Discover thoughtfully styled pieces',
+      'that make every outfit feel',
+      'effortlessly chic. Shop the edit and',
+      'find your next wardrobe favourite.',
+    ],
+    button: {
+      text: 'Shop Now',
+      link: '#shop-edit',
+    },
+    cards: [
+      {
+        id: 'bottoms',
+        category: 'BOTTOMS',
+        image: bottomsImage,
+        alt: 'Model in cropped black jacket and black split front trousers',
+        link: '#bottoms',
+      },
+      {
+        id: 'dresses',
+        category: 'DRESSES',
+        image: dressesImage,
+        alt: 'Model in cream sleeveless flared maxi dress with red handbag',
+        link: '#dresses',
+      },
+      {
+        id: 'tops',
+        category: 'TOPS',
+        image: topsImage,
+        alt: 'Model in white structured pointed-collar blouse and brown skirt',
+        link: '#tops',
       },
     ],
   },
