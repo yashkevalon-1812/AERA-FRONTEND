@@ -24,6 +24,14 @@ import everydayMinimalImage from '../assets/trending-now/everyday-minimal.jpg'
 import afterDarkImage from '../assets/trending-now/after-dark.jpg'
 import softStructureImage from '../assets/trending-now/soft-structure.jpg'
 
+import mostWantedCard1 from '../assets/most-wanted/card-1.png'
+import mostWantedCard2 from '../assets/most-wanted/card-2.png'
+import mostWantedCard3 from '../assets/most-wanted/card-3.png'
+import mostWantedCard4 from '../assets/most-wanted/card-4.png'
+import mostWantedCard5 from '../assets/most-wanted/card-5.png'
+
+import wearWhatBannerImage from '../assets/wear-what/wear-what-banner.jpg'
+
 export const homeData = {
   hero: {
     wordmark: 'AERA',
@@ -253,5 +261,60 @@ export const homeData = {
         link: '#soft-structure',
       },
     ],
+  },
+  mostWanted: {
+    headline: 'MOST WANTED',
+    items: [
+      {
+        id: 'most-wanted-1',
+        title: 'Ivory Tailored Blazer',
+        image: mostWantedCard1,
+        alt: 'Model in ivory tailored blazer, yellow top, and pleated trousers',
+        link: '#most-wanted-1',
+      },
+      {
+        id: 'most-wanted-2',
+        title: 'Relaxed Ribbed Knit',
+        image: mostWantedCard2,
+        alt: 'Model in cream textured knit sweater leaning against white wall',
+        link: '#most-wanted-2',
+      },
+      {
+        id: 'most-wanted-3',
+        title: 'Pink Wrap Mini Dress',
+        image: mostWantedCard3,
+        alt: 'Model in pink ribbed wrap mini dress in studio',
+        link: '#most-wanted-3',
+      },
+      {
+        id: 'most-wanted-4',
+        title: 'Marbled Halter Top',
+        image: mostWantedCard4,
+        alt: 'Model in marbled print crop top and high-waisted black trousers',
+        link: '#most-wanted-4',
+      },
+      {
+        id: 'most-wanted-5',
+        title: 'Cropped Utility Jacket',
+        image: mostWantedCard5,
+        alt: 'Model in brown utility jacket, black mini skirt, and tall boots',
+        link: '#most-wanted-5',
+      },
+    ],
+  },
+  wearWhatMovesYou: {
+    heading: {
+      line1: 'WEAR WHAT',
+      line2: 'MOVES YOU',
+    },
+    subtitle: [
+      'Pieces Designed To Become Part Of The Way',
+      'You Move, Live And Express Yourself.',
+    ],
+    button: {
+      text: 'DISCOVER OUR STORY',
+      link: '#our-story',
+    },
+    bannerImage: wearWhatBannerImage,
   },
 }

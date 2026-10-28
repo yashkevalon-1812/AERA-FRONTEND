@@ -6,6 +6,8 @@ import BrandBar from './BrandBar'
 import ShopTheEdit from './ShopTheEdit'
 import DualPromotionBanner from './DualPromotionBanner'
 import TrendingNow from './TrendingNow'
+import MostWanted from './MostWanted'
+import WearWhatMovesYou from './WearWhatMovesYou'
 import { homeData as defaultHomeData } from '../../data/homeData'
 
 export default function Home({
@@ -20,8 +22,10 @@ export default function Home({
   onShopMen,
   onShopWomen,
   onTrendingItemClick,
+  onMostWantedItemClick,
+  onWearWhatDiscoverStory,
 }) {
-  const { hero, newSeason, newArrivals, artOfDressing, brandTicker, shopTheEdit, dualPromotion, trendingNow } = data || {}
+  const { hero, newSeason, newArrivals, artOfDressing, brandTicker, shopTheEdit, dualPromotion, trendingNow, mostWanted, wearWhatMovesYou } = data || {}
 
   return (
     <div className="w-full flex-1 flex flex-col">
@@ -96,6 +100,22 @@ export default function Home({
         description={trendingNow?.description}
         items={trendingNow?.items}
         onItemClick={onTrendingItemClick}
+      />
+
+      {/* 9. Most Wanted Curated Looks Section */}
+      <MostWanted
+        headline={mostWanted?.headline}
+        items={mostWanted?.items}
+        onItemClick={onMostWantedItemClick}
+      />
+
+      {/* 10. Wear What Moves You Editorial Banner */}
+      <WearWhatMovesYou
+        heading={wearWhatMovesYou?.heading}
+        subtitle={wearWhatMovesYou?.subtitle}
+        button={wearWhatMovesYou?.button}
+        bannerImage={wearWhatMovesYou?.bannerImage}
+        onDiscoverStory={onWearWhatDiscoverStory}
       />
 
       {/* All upcoming Home page sections will be imported and added here */}
