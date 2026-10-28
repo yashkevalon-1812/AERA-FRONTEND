@@ -317,4 +317,30 @@ export const homeData = {
     },
     bannerImage: wearWhatBannerImage,
   },
+  footer: {
+    brandName: 'AERA',
+    primaryNav: [
+      { label: 'NEW COLLECTIONS', link: '#new-collections' },
+      { label: 'EVERYDAY ESSENTIALS', link: '#everyday-essentials' },
+      { label: 'MODERN CLASSICS', link: '#modern-classics' },
+    ],
+    secondaryNav: [
+      { label: 'ABOUT', link: '#about' },
+      { label: 'HELP', link: '#help' },
+      { label: 'CONTACT', link: '#contact' },
+      { label: 'COLLECTION', link: '#collection' },
+      { label: 'SHOP GUIDE', link: '#shop-guide' },
+    ],
+    socialLinks: [
+      { platform: 'pinterest', url: 'https://pinterest.com', label: 'Pinterest' },
+      { platform: 'instagram', url: 'https://instagram.com', label: 'Instagram' },
+      { platform: 'facebook', url: 'https://facebook.com', label: 'Facebook' },
+    ],
+    legalLinks: [
+      { label: 'PRIVACY', link: '#privacy' },
+      { label: 'TERMS', link: '#terms' },
+      { label: 'RETURNS', link: '#returns' },
+    ],
+    copyright: '© 2026 BRAND NAME',
+  },
 }

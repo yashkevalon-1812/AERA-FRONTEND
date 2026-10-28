@@ -8,6 +8,7 @@ import DualPromotionBanner from './DualPromotionBanner'
 import TrendingNow from './TrendingNow'
 import MostWanted from './MostWanted'
 import WearWhatMovesYou from './WearWhatMovesYou'
+import Footer from '../../components/Footer'
 import { homeData as defaultHomeData } from '../../data/homeData'
 
 export default function Home({
@@ -24,8 +25,9 @@ export default function Home({
   onTrendingItemClick,
   onMostWantedItemClick,
   onWearWhatDiscoverStory,
+  onFooterNavClick,
 }) {
-  const { hero, newSeason, newArrivals, artOfDressing, brandTicker, shopTheEdit, dualPromotion, trendingNow, mostWanted, wearWhatMovesYou } = data || {}
+  const { hero, newSeason, newArrivals, artOfDressing, brandTicker, shopTheEdit, dualPromotion, trendingNow, mostWanted, wearWhatMovesYou, footer } = data || {}
 
   return (
     <div className="w-full flex-1 flex flex-col">
@@ -116,6 +118,17 @@ export default function Home({
         button={wearWhatMovesYou?.button}
         bannerImage={wearWhatMovesYou?.bannerImage}
         onDiscoverStory={onWearWhatDiscoverStory}
+      />
+
+      {/* 11. Editorial Brand Footer */}
+      <Footer
+        brandName={footer?.brandName}
+        primaryNav={footer?.primaryNav}
+        secondaryNav={footer?.secondaryNav}
+        socialLinks={footer?.socialLinks}
+        legalLinks={footer?.legalLinks}
+        copyright={footer?.copyright}
+        onNavClick={onFooterNavClick}
       />
 
       {/* All upcoming Home page sections will be imported and added here */}
