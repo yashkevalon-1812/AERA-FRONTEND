@@ -5,6 +5,7 @@ import ArtOfDressing from './ArtOfDressing'
 import BrandBar from './BrandBar'
 import ShopTheEdit from './ShopTheEdit'
 import DualPromotionBanner from './DualPromotionBanner'
+import TrendingNow from './TrendingNow'
 import { homeData as defaultHomeData } from '../../data/homeData'
 
 export default function Home({
@@ -18,8 +19,9 @@ export default function Home({
   onEditCardClick,
   onShopMen,
   onShopWomen,
+  onTrendingItemClick,
 }) {
-  const { hero, newSeason, newArrivals, artOfDressing, brandTicker, shopTheEdit, dualPromotion } = data || {}
+  const { hero, newSeason, newArrivals, artOfDressing, brandTicker, shopTheEdit, dualPromotion, trendingNow } = data || {}
 
   return (
     <div className="w-full flex-1 flex flex-col">
@@ -86,6 +88,14 @@ export default function Home({
         women={dualPromotion?.women}
         onShopMen={onShopMen}
         onShopWomen={onShopWomen}
+      />
+
+      {/* 8. Trending Now Editorial Lookbook Section */}
+      <TrendingNow
+        headline={trendingNow?.headline}
+        description={trendingNow?.description}
+        items={trendingNow?.items}
+        onItemClick={onTrendingItemClick}
       />
 
       {/* All upcoming Home page sections will be imported and added here */}

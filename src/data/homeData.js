@@ -20,6 +20,10 @@ import topsImage from '../assets/shop-the-edit/tops.jpg'
 import menBannerImage from '../assets/dual-banners/men.jpg'
 import womenBannerImage from '../assets/dual-banners/women.jpg'
 
+import everydayMinimalImage from '../assets/trending-now/everyday-minimal.jpg'
+import afterDarkImage from '../assets/trending-now/after-dark.jpg'
+import softStructureImage from '../assets/trending-now/soft-structure.jpg'
+
 export const homeData = {
   hero: {
     wordmark: 'AERA',
@@ -215,5 +219,39 @@ export const homeData = {
       image: womenBannerImage,
       alt: "Women's Edit - The New Feminine",
     },
+  },
+  trendingNow: {
+    headline: {
+      line1: 'TRENDING',
+      line2: 'NOW',
+    },
+    description: [
+      'The pieces defining',
+      'the season, time and',
+      'events of your life.',
+    ],
+    items: [
+      {
+        id: 'everyday-minimal',
+        title: 'EVERYDAY MINIMAL',
+        image: everydayMinimalImage,
+        alt: 'Everyday Minimal - Model in red knit polo and cream trousers',
+        link: '#everyday-minimal',
+      },
+      {
+        id: 'after-dark',
+        title: 'AFTER DARK',
+        image: afterDarkImage,
+        alt: 'After Dark - Model in white bubble mini dress on stairs',
+        link: '#after-dark',
+      },
+      {
+        id: 'soft-structure',
+        title: 'SOFT STRUCTURE',
+        image: softStructureImage,
+        alt: 'Soft Structure - Model in oversized tailored coat and pleated trousers',
+        link: '#soft-structure',
+      },
+    ],
   },
 }
