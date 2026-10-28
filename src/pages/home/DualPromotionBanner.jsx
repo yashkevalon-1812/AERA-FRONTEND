@@ -85,49 +85,46 @@ export default function DualPromotionBanner({
 
           {/* Eyebrow: y=114 (28.50%), x=44 (8.59%) */}
           <p 
-            className="absolute font-sans font-medium uppercase text-[#615249] tracking-[0.08em] text-[8.5px] xl:text-[11px] 2xl:text-[14px] leading-none"
+            className="absolute font-sans font-medium uppercase text-[#615249] tracking-[0.06em] text-[8px] xl:text-[11px] 2xl:text-[14px] leading-none"
             style={{ top: '28.50%', left: '8.59%' }}
           >
             {men?.eyebrow || "MEN'S EDIT"}
           </p>
 
           {/* Headline: THE MODERN MAN
-              Figma CSS specifications:
+              Calibrated exact match:
               font-family: Cormorant Garamond;
-              font-weight: 500;
-              font-style: Medium;
-              font-size: 64px (scaled proportionally: 34px @ 1024px, 48px @ 1440px, 64px @ 1920px);
-              leading-trim: NONE;
+              font-weight: 500 (Medium);
               line-height: 100%;
               letter-spacing: 0px;
               text-transform: uppercase;
           */}
           <h3 
-            className="absolute font-serif font-medium text-[#615249] uppercase text-[34px] xl:text-[48px] 2xl:text-[64px] leading-none tracking-[0px]"
-            style={{ top: '34.25%', left: '8.59%' }}
+            className="absolute font-serif font-medium text-[#615249] uppercase text-[34px] xl:text-[45px] 2xl:text-[56px] leading-none tracking-[0px]"
+            style={{ top: '33.50%', left: '8.59%' }}
           >
             {men?.headline || 'THE MODERN MAN'}
           </h3>
 
-          {/* Subtitle: y=189 (47.25%), x=44 (8.59%) */}
+          {/* Subtitle: y=189 (47.00%), x=44 (8.59%) */}
           <div 
-            className="absolute font-sans font-normal text-[#615249] text-[11px] xl:text-[15px] 2xl:text-[20px] leading-[1.45]"
-            style={{ top: '47.25%', left: '8.59%' }}
+            className="absolute font-sans font-normal text-[#615249] text-[10.5px] xl:text-[13.5px] 2xl:text-[17px] leading-[1.38]"
+            style={{ top: '47.00%', left: '8.59%' }}
           >
             {menSubtitleLines.map((line, idx) => (
               <p key={idx}>{line}</p>
             ))}
           </div>
 
-          {/* Promotion: y=233 (58.25%), x=44 (8.59%) */}
+          {/* Promotion: y=231 (57.75%), x=44 (8.59%) */}
           <div 
             className="absolute flex items-baseline leading-none text-[#615249]"
-            style={{ top: '58.25%', left: '8.59%' }}
+            style={{ top: '57.75%', left: '8.59%' }}
           >
-            <span className="font-serif font-medium text-[24px] xl:text-[33px] 2xl:text-[45px] leading-none">
+            <span className="font-serif font-medium text-[24px] xl:text-[30px] 2xl:text-[38px] leading-none">
               {men?.promo?.discount || '20% OFF'}
             </span>
-            <span className="font-serif font-medium uppercase text-[10.5px] xl:text-[14.5px] 2xl:text-[19px] tracking-[0.12em] leading-none ml-2">
+            <span className="font-serif font-medium uppercase text-[10.5px] xl:text-[13px] 2xl:text-[16px] tracking-[0.1em] leading-none ml-2">
               {men?.promo?.tag || 'SELECTED STYLES'}
             </span>
           </div>
@@ -142,14 +139,14 @@ export default function DualPromotionBanner({
               }
             }}
             aria-label={men?.eyebrow || "Shop Men's Edit"}
-            className="absolute w-[18px] h-[18px] xl:w-[25px] xl:h-[25px] 2xl:w-[34px] 2xl:h-[34px] rounded-full border border-[#615249] flex items-center justify-center text-[#615249] group-hover:bg-[#615249] group-hover:text-white group-hover:border-[#615249] transition-all duration-300"
+            className="absolute w-[16px] h-[16px] xl:w-[21px] xl:h-[21px] 2xl:w-[28px] 2xl:h-[28px] rounded-full border border-[#615249] flex items-center justify-center text-[#615249] group-hover:bg-[#615249] group-hover:text-white group-hover:border-[#615249] transition-all duration-300"
             style={{ top: '67.00%', left: '8.59%' }}
           >
             <svg
               viewBox="0 0 16 16"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="w-[9px] h-[9px] xl:w-[13px] xl:h-[13px] 2xl:w-[17px] 2xl:h-[17px] stroke-current stroke-[1.4]"
+              className="w-[8px] h-[8px] xl:w-[11px] xl:h-[11px] 2xl:w-[14px] 2xl:h-[14px] stroke-current stroke-[1.4]"
             >
               <path d="M3 8H13M9.5 4.5L13 8L9.5 11.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
@@ -172,49 +169,49 @@ export default function DualPromotionBanner({
 
           {/* Eyebrow: y=94 (23.50%), x=44 (8.59%) */}
           <p 
-            className="absolute font-sans font-medium uppercase text-[#615249] tracking-[0.08em] text-[8.5px] xl:text-[11px] 2xl:text-[14px] leading-none"
+            className="absolute font-sans font-medium uppercase text-[#615249] tracking-[0.06em] text-[8px] xl:text-[11px] 2xl:text-[14px] leading-none"
             style={{ top: '23.50%', left: '8.59%' }}
           >
             {women?.eyebrow || "WOMEN'S EDIT"}
           </p>
 
-          {/* Headline Line 1: y=117 (29.25%), x=44 (8.59%) */}
+          {/* Headline Line 1: y=114 (28.50%), x=44 (8.59%) */}
           <h3 
-            className="absolute font-serif font-medium text-[#615249] uppercase text-[34px] xl:text-[48px] 2xl:text-[64px] tracking-[0px] leading-none"
-            style={{ top: '29.25%', left: '8.59%' }}
+            className="absolute font-serif font-medium text-[#615249] uppercase text-[34px] xl:text-[45px] 2xl:text-[56px] tracking-[0px] leading-none"
+            style={{ top: '28.50%', left: '8.59%' }}
           >
             {womenLine1}
           </h3>
 
-          {/* Headline Line 2: y=159 (39.75%), x=44 (8.59%) */}
+          {/* Headline Line 2: y=156 (39.00%), x=44 (8.59%) */}
           {womenLine2 && (
             <h3 
-              className="absolute font-serif font-medium text-[#615249] uppercase text-[34px] xl:text-[48px] 2xl:text-[60px] tracking-[0px] leading-none"
-              style={{ top: '39.75%', left: '8.59%' }}
+              className="absolute font-serif font-medium text-[#615249] uppercase text-[34px] xl:text-[45px] 2xl:text-[56px] tracking-[0px] leading-none"
+              style={{ top: '39.00%', left: '8.59%' }}
             >
               {womenLine2}
             </h3>
           )}
 
-          {/* Subtitle: y=205 (51.25%), x=44 (8.59%) */}
+          {/* Subtitle: y=207 (51.75%), x=44 (8.59%) */}
           <div 
-            className="absolute font-sans font-normal text-[#615249] text-[11px] xl:text-[15px] 2xl:text-[20px] leading-[1.45]"
-            style={{ top: '51.25%', left: '8.59%' }}
+            className="absolute font-sans font-normal text-[#615249] text-[10.5px] xl:text-[13.5px] 2xl:text-[17px] leading-[1.38]"
+            style={{ top: '51.75%', left: '8.59%' }}
           >
             {womenSubtitleLines.map((line, idx) => (
               <p key={idx}>{line}</p>
             ))}
           </div>
 
-          {/* Promotion: y=254 (63.50%), x=44 (8.59%) */}
+          {/* Promotion: y=250 (62.50%), x=44 (8.59%) */}
           <div 
             className="absolute flex items-baseline leading-none text-[#615249]"
-            style={{ top: '63.50%', left: '8.59%' }}
+            style={{ top: '62.50%', left: '8.59%' }}
           >
-            <span className="font-serif font-medium text-[24px] xl:text-[33px] 2xl:text-[45px] leading-none">
+            <span className="font-serif font-medium text-[24px] xl:text-[30px] 2xl:text-[38px] leading-none">
               {women?.promo?.discount || '20% OFF'}
             </span>
-            <span className="font-serif font-medium uppercase text-[10.5px] xl:text-[14.5px] 2xl:text-[19px] tracking-[0.12em] leading-none ml-2">
+            <span className="font-serif font-medium uppercase text-[10.5px] xl:text-[13px] 2xl:text-[16px] tracking-[0.1em] leading-none ml-2">
               {women?.promo?.tag || 'SELECTED STYLES'}
             </span>
           </div>
@@ -229,14 +226,14 @@ export default function DualPromotionBanner({
               }
             }}
             aria-label={women?.eyebrow || "Shop Women's Edit"}
-            className="absolute w-[18px] h-[18px] xl:w-[25px] xl:h-[25px] 2xl:w-[34px] 2xl:h-[34px] rounded-full border border-[#615249] flex items-center justify-center text-[#615249] group-hover:bg-[#615249] group-hover:text-white group-hover:border-[#615249] transition-all duration-300"
+            className="absolute w-[16px] h-[16px] xl:w-[21px] xl:h-[21px] 2xl:w-[28px] 2xl:h-[28px] rounded-full border border-[#615249] flex items-center justify-center text-[#615249] group-hover:bg-[#615249] group-hover:text-white group-hover:border-[#615249] transition-all duration-300"
             style={{ top: '72.25%', left: '8.59%' }}
           >
             <svg
               viewBox="0 0 16 16"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="w-[9px] h-[9px] xl:w-[13px] xl:h-[13px] 2xl:w-[17px] 2xl:h-[17px] stroke-current stroke-[1.4]"
+              className="w-[8px] h-[8px] xl:w-[11px] xl:h-[11px] 2xl:w-[14px] 2xl:h-[14px] stroke-current stroke-[1.4]"
             >
               <path d="M3 8H13M9.5 4.5L13 8L9.5 11.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
@@ -252,29 +249,29 @@ export default function DualPromotionBanner({
         
         {/* Mobile Left Banner: MEN'S EDIT */}
         <div 
-          className="relative w-full aspect-[512/400] overflow-hidden bg-[#EAECEE] cursor-pointer"
+          className="relative w-full aspect-[512/400] overflow-hidden bg-[#EAECEE] group cursor-pointer"
           onClick={onShopMen}
         >
           <img
             src={men?.image || defaultMenImage}
             alt={men?.alt || "Men's Edit"}
-            className="absolute inset-0 w-full h-full object-cover object-right"
+            className="absolute inset-0 w-full h-full object-cover object-right pointer-events-none"
           />
           <p 
-            className="absolute font-sans font-medium uppercase text-[#615249] tracking-[0.08em] text-[8px] leading-none"
+            className="absolute font-sans font-medium uppercase text-[#615249] tracking-[0.06em] text-[8px] leading-none"
             style={{ top: '28.50%', left: '8.59%' }}
           >
             {men?.eyebrow || "MEN'S EDIT"}
           </p>
           <h3 
-            className="absolute font-serif font-medium text-[#615249] uppercase text-[28px] leading-none tracking-[0px]"
-            style={{ top: '34.25%', left: '8.59%' }}
+            className="absolute font-serif font-medium text-[#615249] uppercase text-[24px] leading-none tracking-[0px]"
+            style={{ top: '33.50%', left: '8.59%' }}
           >
             {men?.headline || 'THE MODERN MAN'}
           </h3>
           <div 
-            className="absolute font-sans font-normal text-[#615249] text-[10px] leading-[1.45]"
-            style={{ top: '47.25%', left: '8.59%' }}
+            className="absolute font-sans font-normal text-[#615249] text-[10px] leading-[1.38]"
+            style={{ top: '47.00%', left: '8.59%' }}
           >
             {menSubtitleLines.map((line, idx) => (
               <p key={idx}>{line}</p>
@@ -282,17 +279,17 @@ export default function DualPromotionBanner({
           </div>
           <div 
             className="absolute flex items-baseline leading-none text-[#615249]"
-            style={{ top: '58.25%', left: '8.59%' }}
+            style={{ top: '57.75%', left: '8.59%' }}
           >
             <span className="font-serif font-medium text-[20px] leading-none">
               {men?.promo?.discount || '20% OFF'}
             </span>
-            <span className="font-serif font-medium uppercase text-[9px] tracking-[0.12em] leading-none ml-2">
+            <span className="font-serif font-medium uppercase text-[9px] tracking-[0.1em] leading-none ml-2">
               {men?.promo?.tag || 'SELECTED STYLES'}
             </span>
           </div>
           <div 
-            className="absolute w-[16px] h-[16px] rounded-full border border-[#615249] flex items-center justify-center text-[#615249]"
+            className="absolute w-[16px] h-[16px] rounded-full border border-[#615249] flex items-center justify-center text-[#615249] group-hover:bg-[#615249] group-hover:text-white group-hover:border-[#615249] transition-all duration-300"
             style={{ top: '67.00%', left: '8.59%' }}
           >
             <svg viewBox="0 0 16 16" fill="none" className="w-[8px] h-[8px] stroke-current stroke-[1.4]">
@@ -303,37 +300,37 @@ export default function DualPromotionBanner({
 
         {/* Mobile Right Banner: WOMEN'S EDIT */}
         <div 
-          className="relative w-full aspect-[512/400] overflow-hidden bg-[#B2C3D5] cursor-pointer"
+          className="relative w-full aspect-[512/400] overflow-hidden bg-[#B2C3D5] group cursor-pointer"
           onClick={onShopWomen}
         >
           <img
             src={women?.image || defaultWomenImage}
             alt={women?.alt || "Women's Edit"}
-            className="absolute inset-0 w-full h-full object-cover object-right"
+            className="absolute inset-0 w-full h-full object-cover object-right pointer-events-none"
           />
           <p 
-            className="absolute font-sans font-medium uppercase text-[#615249] tracking-[0.08em] text-[8px] leading-none"
+            className="absolute font-sans font-medium uppercase text-[#615249] tracking-[0.06em] text-[8px] leading-none"
             style={{ top: '23.50%', left: '8.59%' }}
           >
             {women?.eyebrow || "WOMEN'S EDIT"}
           </p>
           <h3 
-            className="absolute font-serif font-medium text-[#615249] uppercase text-[28px] leading-none tracking-[0px]"
-            style={{ top: '29.25%', left: '8.59%' }}
+            className="absolute font-serif font-medium text-[#615249] uppercase text-[24px] leading-none tracking-[0px]"
+            style={{ top: '28.50%', left: '8.59%' }}
           >
             {womenLine1}
           </h3>
           {womenLine2 && (
             <h3 
-              className="absolute font-serif font-medium text-[#615249] uppercase text-[28px] leading-none tracking-[0px]"
-              style={{ top: '39.75%', left: '8.59%' }}
+              className="absolute font-serif font-medium text-[#615249] uppercase text-[24px] leading-none tracking-[0px]"
+              style={{ top: '39.00%', left: '8.59%' }}
             >
               {womenLine2}
             </h3>
           )}
           <div 
-            className="absolute font-sans font-normal text-[#615249] text-[10px] leading-[1.45]"
-            style={{ top: '51.25%', left: '8.59%' }}
+            className="absolute font-sans font-normal text-[#615249] text-[10px] leading-[1.38]"
+            style={{ top: '51.75%', left: '8.59%' }}
           >
             {womenSubtitleLines.map((line, idx) => (
               <p key={idx}>{line}</p>
@@ -341,17 +338,17 @@ export default function DualPromotionBanner({
           </div>
           <div 
             className="absolute flex items-baseline leading-none text-[#615249]"
-            style={{ top: '63.50%', left: '8.59%' }}
+            style={{ top: '62.50%', left: '8.59%' }}
           >
             <span className="font-serif font-medium text-[20px] leading-none">
               {women?.promo?.discount || '20% OFF'}
             </span>
-            <span className="font-serif font-medium uppercase text-[9px] tracking-[0.12em] leading-none ml-2">
+            <span className="font-serif font-medium uppercase text-[9px] tracking-[0.1em] leading-none ml-2">
               {women?.promo?.tag || 'SELECTED STYLES'}
             </span>
           </div>
           <div 
-            className="absolute w-[16px] h-[16px] rounded-full border border-[#615249] flex items-center justify-center text-[#615249]"
+            className="absolute w-[16px] h-[16px] rounded-full border border-[#615249] flex items-center justify-center text-[#615249] group-hover:bg-[#615249] group-hover:text-white group-hover:border-[#615249] transition-all duration-300"
             style={{ top: '72.25%', left: '8.59%' }}
           >
             <svg viewBox="0 0 16 16" fill="none" className="w-[8px] h-[8px] stroke-current stroke-[1.4]">
