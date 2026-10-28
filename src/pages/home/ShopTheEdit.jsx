@@ -152,24 +152,37 @@ export default function ShopTheEdit({
           )
         })}
 
-        {/* 1B. Right Editorial Headline Line 1 ("SHOP") */}
-        <div className="absolute right-[4.20%] top-[20.9%] z-20 pointer-events-none text-right">
-          <h2 className="font-serif font-normal text-[#171515] text-[clamp(30px,3.8vw,70px)] uppercase leading-none tracking-normal">
-            {line1}
+        {/* 1B. Right Editorial Headline ("SHOP THE EDIT") */}
+        <div className="absolute right-[4.20%] top-[21.5%] z-20 pointer-events-none text-right">
+          <h2
+            style={{
+              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontWeight: 400,
+              fontStyle: 'normal',
+              letterSpacing: '0px',
+              textAlign: 'right',
+              textTransform: 'uppercase',
+            }}
+            className="font-serif font-normal text-[clamp(36px,3.9vw,78px)] leading-[clamp(46px,5.0vw,96px)] tracking-[0px] text-right uppercase"
+          >
+            <span className="block text-[#171515] leading-none">{line1}</span>
+            <span className="block text-[#97173A] mt-[clamp(4px,0.8vw,20px)] leading-none">{line2}</span>
           </h2>
         </div>
 
-        {/* 1C. Right Editorial Headline Line 2 ("THE EDIT") */}
-        <div className="absolute right-[4.20%] top-[32.6%] z-20 pointer-events-none text-right">
-          <h2 className="font-serif font-normal text-[#97173A] text-[clamp(30px,3.8vw,70px)] uppercase leading-none tracking-normal whitespace-nowrap">
-            {line2}
-          </h2>
-        </div>
-
-        {/* 1D. Description Paragraph (Right-Aligned, Exact Line Breaks) */}
+        {/* 1C. Description Paragraph (Image-Calibrated Inika Specs) */}
         {descLines && (
-          <div className="absolute right-[4.10%] top-[49.5%] z-20 pointer-events-none text-right">
-            <p className="font-serif font-normal text-[#222222] text-[clamp(10px,1.14vw,17px)] leading-[1.38] opacity-95">
+          <div className="absolute right-[4.10%] top-[50.1%] z-20 pointer-events-none text-right">
+            <p
+              style={{
+                fontFamily: "'Inika', Georgia, serif",
+                fontWeight: 400,
+                fontStyle: 'normal',
+                letterSpacing: '0px',
+                textAlign: 'right',
+              }}
+              className="font-inika font-normal text-[#222222] text-[clamp(11.5px,1.2vw,24px)] leading-[clamp(16.5px,1.65vw,32px)] tracking-[0px] text-right opacity-95"
+            >
               {descLines.map((line, idx) => (
                 <span key={idx} className="block whitespace-nowrap">
                   {line}
@@ -179,7 +192,7 @@ export default function ShopTheEdit({
           </div>
         )}
 
-        {/* 1E. CTA "Shop Now" Button */}
+        {/* 1D. CTA "Shop Now" Button */}
         {buttonText && (
           <div className="absolute right-[4.10%] top-[70.80%] z-20 pointer-events-auto text-right">
             <a
@@ -201,7 +214,17 @@ export default function ShopTheEdit({
         
         {/* Mobile Headline */}
         <div>
-          <h2 className="font-serif font-normal text-[36px] uppercase leading-none tracking-normal">
+          <h2
+            style={{
+              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontWeight: 400,
+              fontStyle: 'normal',
+              letterSpacing: '0px',
+              textAlign: 'right',
+              textTransform: 'uppercase',
+            }}
+            className="font-serif font-normal text-[36px] sm:text-[44px] leading-[1.2] uppercase tracking-[0px] text-right"
+          >
             <span className="block text-[#171515]">{line1}</span>
             <span className="block text-[#97173A] mt-1.5">{line2}</span>
           </h2>
@@ -250,7 +273,16 @@ export default function ShopTheEdit({
         {/* Description & Action */}
         <div className="flex flex-col items-end gap-4">
           {descLines && (
-            <p className="font-serif font-normal text-[#222222] text-[12.5px] leading-relaxed max-w-[280px]">
+            <p
+              style={{
+                fontFamily: "'Inika', Georgia, serif",
+                fontWeight: 400,
+                fontStyle: 'normal',
+                letterSpacing: '0px',
+                textAlign: 'right',
+              }}
+              className="font-inika font-normal text-[#222222] text-[13.5px] sm:text-[15px] leading-[1.4] max-w-[280px] text-right"
+            >
               {descLines.join(' ')}
             </p>
           )}

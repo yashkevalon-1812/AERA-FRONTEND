@@ -4,6 +4,7 @@ import NewArrivals from './NewArrivals'
 import ArtOfDressing from './ArtOfDressing'
 import BrandBar from './BrandBar'
 import ShopTheEdit from './ShopTheEdit'
+import DualPromotionBanner from './DualPromotionBanner'
 import { homeData as defaultHomeData } from '../../data/homeData'
 
 export default function Home({
@@ -15,8 +16,10 @@ export default function Home({
   onDiscoverStory,
   onShopTheEdit,
   onEditCardClick,
+  onShopMen,
+  onShopWomen,
 }) {
-  const { hero, newSeason, newArrivals, artOfDressing, brandTicker, shopTheEdit } = data || {}
+  const { hero, newSeason, newArrivals, artOfDressing, brandTicker, shopTheEdit, dualPromotion } = data || {}
 
   return (
     <div className="w-full flex-1 flex flex-col">
@@ -75,6 +78,14 @@ export default function Home({
         cards={shopTheEdit?.cards}
         onShopNow={onShopTheEdit}
         onCardClick={onEditCardClick}
+      />
+
+      {/* 7. Dual Promotion Editorial Banner (Men's & Women's Edit) */}
+      <DualPromotionBanner
+        men={dualPromotion?.men}
+        women={dualPromotion?.women}
+        onShopMen={onShopMen}
+        onShopWomen={onShopWomen}
       />
 
       {/* All upcoming Home page sections will be imported and added here */}

@@ -17,6 +17,9 @@ import bottomsImage from '../assets/shop-the-edit/bottoms.jpg'
 import dressesImage from '../assets/shop-the-edit/dresses.jpg'
 import topsImage from '../assets/shop-the-edit/tops.jpg'
 
+import menBannerImage from '../assets/dual-banners/men.jpg'
+import womenBannerImage from '../assets/dual-banners/women.jpg'
+
 export const homeData = {
   hero: {
     wordmark: 'AERA',
@@ -177,5 +180,40 @@ export const homeData = {
         link: '#tops',
       },
     ],
+  },
+  dualPromotion: {
+    men: {
+      eyebrow: "MEN'S EDIT",
+      headline: 'THE MODERN MAN',
+      subtitle: [
+        'Refined Essentials. Relaxed Silhouettes.',
+        'Made For Every Day.',
+      ],
+      promo: {
+        discount: '20% OFF',
+        tag: 'SELECTED STYLES',
+      },
+      link: '#mens-edit',
+      image: menBannerImage,
+      alt: "Men's Edit - The Modern Man",
+    },
+    women: {
+      eyebrow: "WOMEN'S EDIT",
+      headline: {
+        line1: 'THE NEW',
+        line2: 'FEMININE',
+      },
+      subtitle: [
+        'Modern Silhouettes, Effortless Layers And',
+        'Pieces Designed To Be Remembered.',
+      ],
+      promo: {
+        discount: '20% OFF',
+        tag: 'SELECTED STYLES',
+      },
+      link: '#womens-edit',
+      image: womenBannerImage,
+      alt: "Women's Edit - The New Feminine",
+    },
   },
 }
