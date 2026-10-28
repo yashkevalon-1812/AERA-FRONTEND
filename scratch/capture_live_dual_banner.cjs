@@ -32,6 +32,10 @@ const puppeteer = require('puppeteer-core');
 
   if (bannerRect) {
     await page.screenshot({
+      path: 'C:/Users/divye/.gemini/antigravity/brain/a40e8476-2329-48c2-8837-b12cf6408663/dual_banner_verified_1024.png',
+      clip: bannerRect
+    });
+    await page.screenshot({
       path: 'AERA-FRONTEND/scratch/live_dual_banner_1024.png',
       clip: bannerRect
     });
@@ -57,6 +61,10 @@ const puppeteer = require('puppeteer-core');
   });
   if (rect1440) {
     await page.screenshot({
+      path: 'C:/Users/divye/.gemini/antigravity/brain/a40e8476-2329-48c2-8837-b12cf6408663/dual_banner_verified_1440.png',
+      clip: rect1440
+    });
+    await page.screenshot({
       path: 'AERA-FRONTEND/scratch/live_dual_banner_1440.png',
       clip: rect1440
     });
@@ -81,6 +89,10 @@ const puppeteer = require('puppeteer-core');
     return null;
   });
   if (rect375) {
+    await page.screenshot({
+      path: 'C:/Users/divye/.gemini/antigravity/brain/a40e8476-2329-48c2-8837-b12cf6408663/dual_banner_verified_375.png',
+      clip: rect375
+    });
     await page.screenshot({
       path: 'AERA-FRONTEND/scratch/live_dual_banner_375.png',
       clip: rect375
