@@ -102,17 +102,18 @@ export default function TrendingNow({
 
             {/* Card 1: EVERYDAY MINIMAL (flush with bottom of col 2) */}
             <div 
-              className="relative w-full aspect-[282/275] overflow-hidden bg-[#2D2A28] group cursor-pointer"
+              className="relative w-full aspect-[282/275] overflow-hidden bg-[#2D2A28] group cursor-pointer luxury-shine-card"
               onClick={() => onItemClick && onItemClick(item1)}
             >
               <img
                 src={item1.image || defaultEverydayMinimalImage}
                 alt={item1.alt || item1.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                className="w-full h-full object-cover group-hover:scale-105 group-hover:brightness-[1.03] transition-all duration-700 ease-out"
               />
-              <div className="absolute inset-0 bg-black/15 group-hover:bg-black/25 transition-colors duration-500" />
-              <div className="absolute inset-0 flex items-center justify-center p-4 pointer-events-none">
-                <h3 className="font-serif font-medium text-white uppercase text-center tracking-[0.16em] text-[13px] xl:text-[16px] 2xl:text-[20px] drop-shadow-sm whitespace-nowrap">
+              <div className="shine-ambient" />
+              <div className="shine-beam" />
+              <div className="absolute inset-0 flex items-center justify-center p-4 pointer-events-none z-30">
+                <h3 className="font-serif font-medium text-white uppercase text-center tracking-[0.16em] group-hover:tracking-[0.18em] text-[13px] xl:text-[16px] 2xl:text-[20px] whitespace-nowrap transition-all duration-500">
                   {item1.title}
                 </h3>
               </div>
@@ -122,17 +123,18 @@ export default function TrendingNow({
           {/* COLUMN 2: Full Height AFTER DARK */}
           <div className="h-full flex flex-col justify-start">
             <div 
-              className="relative w-full aspect-[323/416] overflow-hidden bg-[#2D2A28] group cursor-pointer"
+              className="relative w-full aspect-[323/416] overflow-hidden bg-[#2D2A28] group cursor-pointer luxury-shine-card"
               onClick={() => onItemClick && onItemClick(item2)}
             >
               <img
                 src={item2.image || defaultAfterDarkImage}
                 alt={item2.alt || item2.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                className="w-full h-full object-cover group-hover:scale-105 group-hover:brightness-[1.03] transition-all duration-700 ease-out"
               />
-              <div className="absolute inset-0 bg-black/15 group-hover:bg-black/25 transition-colors duration-500" />
-              <div className="absolute inset-0 flex items-center justify-center p-4 pointer-events-none">
-                <h3 className="font-serif font-medium text-white uppercase text-center tracking-[0.16em] text-[13px] xl:text-[16px] 2xl:text-[20px] drop-shadow-sm whitespace-nowrap">
+              <div className="shine-ambient" />
+              <div className="shine-beam" />
+              <div className="absolute inset-0 flex items-center justify-center p-4 pointer-events-none z-30">
+                <h3 className="font-serif font-medium text-white uppercase text-center tracking-[0.16em] group-hover:tracking-[0.18em] text-[13px] xl:text-[16px] 2xl:text-[20px] whitespace-nowrap transition-all duration-500">
                   {item2.title}
                 </h3>
               </div>
@@ -143,17 +145,18 @@ export default function TrendingNow({
           <div className="h-full flex flex-col justify-start">
             {/* Card 3: SOFT STRUCTURE (flush with top of col 2) */}
             <div 
-              className="relative w-full aspect-[282/294] overflow-hidden bg-[#2D2A28] group cursor-pointer"
+              className="relative w-full aspect-[282/294] overflow-hidden bg-[#2D2A28] group cursor-pointer luxury-shine-card"
               onClick={() => onItemClick && onItemClick(item3)}
             >
               <img
                 src={item3.image || defaultSoftStructureImage}
                 alt={item3.alt || item3.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                className="w-full h-full object-cover group-hover:scale-105 group-hover:brightness-[1.03] transition-all duration-700 ease-out"
               />
-              <div className="absolute inset-0 bg-black/15 group-hover:bg-black/25 transition-colors duration-500" />
-              <div className="absolute inset-0 flex items-center justify-center p-4 pointer-events-none">
-                <h3 className="font-serif font-medium text-white uppercase text-center tracking-[0.16em] text-[13px] xl:text-[16px] 2xl:text-[20px] drop-shadow-sm whitespace-nowrap">
+              <div className="shine-ambient" />
+              <div className="shine-beam" />
+              <div className="absolute inset-0 flex items-center justify-center p-4 pointer-events-none z-30">
+                <h3 className="font-serif font-medium text-white uppercase text-center tracking-[0.16em] group-hover:tracking-[0.18em] text-[13px] xl:text-[16px] 2xl:text-[20px] whitespace-nowrap transition-all duration-500">
                   {item3.title}
                 </h3>
               </div>
@@ -187,17 +190,18 @@ export default function TrendingNow({
           <div className="flex flex-col gap-5">
             {/* Card 1 */}
             <div 
-              className="relative w-full aspect-[282/275] overflow-hidden bg-[#2D2A28] cursor-pointer"
+              className="relative w-full aspect-[282/275] overflow-hidden bg-[#2D2A28] group cursor-pointer luxury-shine-card"
               onClick={() => onItemClick && onItemClick(item1)}
             >
               <img
                 src={item1.image || defaultEverydayMinimalImage}
                 alt={item1.alt || item1.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover group-hover:scale-105 group-hover:brightness-[1.03] transition-all duration-700 ease-out"
               />
-              <div className="absolute inset-0 bg-black/15" />
-              <div className="absolute inset-0 flex items-center justify-center p-4 pointer-events-none">
-                <h3 className="font-serif font-medium text-white uppercase text-center tracking-[0.16em] text-[13px] drop-shadow-sm">
+              <div className="shine-ambient" />
+              <div className="shine-beam" />
+              <div className="absolute inset-0 flex items-center justify-center p-4 pointer-events-none z-30">
+                <h3 className="font-serif font-medium text-white uppercase text-center tracking-[0.16em] group-hover:tracking-[0.18em] text-[13px] transition-all duration-500">
                   {item1.title}
                 </h3>
               </div>
@@ -205,17 +209,18 @@ export default function TrendingNow({
 
             {/* Card 2 */}
             <div 
-              className="relative w-full aspect-[323/416] overflow-hidden bg-[#2D2A28] cursor-pointer"
+              className="relative w-full aspect-[323/416] overflow-hidden bg-[#2D2A28] group cursor-pointer luxury-shine-card"
               onClick={() => onItemClick && onItemClick(item2)}
             >
               <img
                 src={item2.image || defaultAfterDarkImage}
                 alt={item2.alt || item2.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover group-hover:scale-105 group-hover:brightness-[1.03] transition-all duration-700 ease-out"
               />
-              <div className="absolute inset-0 bg-black/15" />
-              <div className="absolute inset-0 flex items-center justify-center p-4 pointer-events-none">
-                <h3 className="font-serif font-medium text-white uppercase text-center tracking-[0.16em] text-[13px] drop-shadow-sm">
+              <div className="shine-ambient" />
+              <div className="shine-beam" />
+              <div className="absolute inset-0 flex items-center justify-center p-4 pointer-events-none z-30">
+                <h3 className="font-serif font-medium text-white uppercase text-center tracking-[0.16em] group-hover:tracking-[0.18em] text-[13px] transition-all duration-500">
                   {item2.title}
                 </h3>
               </div>
@@ -223,17 +228,18 @@ export default function TrendingNow({
 
             {/* Card 3 */}
             <div 
-              className="relative w-full aspect-[282/294] overflow-hidden bg-[#2D2A28] cursor-pointer"
+              className="relative w-full aspect-[282/294] overflow-hidden bg-[#2D2A28] group cursor-pointer luxury-shine-card"
               onClick={() => onItemClick && onItemClick(item3)}
             >
               <img
                 src={item3.image || defaultSoftStructureImage}
                 alt={item3.alt || item3.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover group-hover:scale-105 group-hover:brightness-[1.03] transition-all duration-700 ease-out"
               />
-              <div className="absolute inset-0 bg-black/15" />
-              <div className="absolute inset-0 flex items-center justify-center p-4 pointer-events-none">
-                <h3 className="font-serif font-medium text-white uppercase text-center tracking-[0.16em] text-[13px] drop-shadow-sm">
+              <div className="shine-ambient" />
+              <div className="shine-beam" />
+              <div className="absolute inset-0 flex items-center justify-center p-4 pointer-events-none z-30">
+                <h3 className="font-serif font-medium text-white uppercase text-center tracking-[0.16em] group-hover:tracking-[0.18em] text-[13px] transition-all duration-500">
                   {item3.title}
                 </h3>
               </div>
