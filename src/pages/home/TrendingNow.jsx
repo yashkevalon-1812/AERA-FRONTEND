@@ -1,7 +1,7 @@
 import React from 'react'
-import defaultEverydayMinimalImage from '../../assets/trending-now/everyday-minimal.jpg'
-import defaultAfterDarkImage from '../../assets/trending-now/after-dark.jpg'
-import defaultSoftStructureImage from '../../assets/trending-now/soft-structure.jpg'
+import defaultEverydayMinimalImage from '../../assets/trending-now/everyday-minimal.png'
+import defaultAfterDarkImage from '../../assets/trending-now/after-dark.png'
+import defaultSoftStructureImage from '../../assets/trending-now/soft-structure.png'
 
 export default function TrendingNow({
   headline = {
@@ -104,19 +104,16 @@ export default function TrendingNow({
             <div 
               className="relative w-full aspect-[282/275] overflow-hidden bg-[#2D2A28] group cursor-pointer luxury-shine-card"
               onClick={() => onItemClick && onItemClick(item1)}
+              aria-label={item1.title}
             >
               <img
                 src={item1.image || defaultEverydayMinimalImage}
                 alt={item1.alt || item1.title}
-                className="w-full h-full object-cover group-hover:scale-105 group-hover:brightness-[1.03] transition-all duration-700 ease-out"
+                className="w-full h-full object-cover brightness-[1.06] contrast-[1.02] group-hover:scale-105 group-hover:brightness-[1.16] transition-all duration-700 ease-out"
               />
+              <div className="shine-glow" />
               <div className="shine-ambient" />
               <div className="shine-beam" />
-              <div className="absolute inset-0 flex items-center justify-center p-4 pointer-events-none z-30">
-                <h3 className="font-serif font-medium text-white uppercase text-center tracking-[0.16em] group-hover:tracking-[0.18em] text-[13px] xl:text-[16px] 2xl:text-[20px] whitespace-nowrap transition-all duration-500">
-                  {item1.title}
-                </h3>
-              </div>
             </div>
           </div>
 
@@ -125,19 +122,16 @@ export default function TrendingNow({
             <div 
               className="relative w-full aspect-[323/416] overflow-hidden bg-[#2D2A28] group cursor-pointer luxury-shine-card"
               onClick={() => onItemClick && onItemClick(item2)}
+              aria-label={item2.title}
             >
               <img
                 src={item2.image || defaultAfterDarkImage}
                 alt={item2.alt || item2.title}
-                className="w-full h-full object-cover group-hover:scale-105 group-hover:brightness-[1.03] transition-all duration-700 ease-out"
+                className="w-full h-full object-cover brightness-[1.06] contrast-[1.02] group-hover:scale-105 group-hover:brightness-[1.16] transition-all duration-700 ease-out"
               />
+              <div className="shine-glow" />
               <div className="shine-ambient" />
               <div className="shine-beam" />
-              <div className="absolute inset-0 flex items-center justify-center p-4 pointer-events-none z-30">
-                <h3 className="font-serif font-medium text-white uppercase text-center tracking-[0.16em] group-hover:tracking-[0.18em] text-[13px] xl:text-[16px] 2xl:text-[20px] whitespace-nowrap transition-all duration-500">
-                  {item2.title}
-                </h3>
-              </div>
             </div>
           </div>
 
@@ -147,19 +141,16 @@ export default function TrendingNow({
             <div 
               className="relative w-full aspect-[282/294] overflow-hidden bg-[#2D2A28] group cursor-pointer luxury-shine-card"
               onClick={() => onItemClick && onItemClick(item3)}
+              aria-label={item3.title}
             >
               <img
                 src={item3.image || defaultSoftStructureImage}
                 alt={item3.alt || item3.title}
-                className="w-full h-full object-cover group-hover:scale-105 group-hover:brightness-[1.03] transition-all duration-700 ease-out"
+                className="w-full h-full object-cover brightness-[1.06] contrast-[1.02] group-hover:scale-105 group-hover:brightness-[1.16] transition-all duration-700 ease-out"
               />
+              <div className="shine-glow" />
               <div className="shine-ambient" />
               <div className="shine-beam" />
-              <div className="absolute inset-0 flex items-center justify-center p-4 pointer-events-none z-30">
-                <h3 className="font-serif font-medium text-white uppercase text-center tracking-[0.16em] group-hover:tracking-[0.18em] text-[13px] xl:text-[16px] 2xl:text-[20px] whitespace-nowrap transition-all duration-500">
-                  {item3.title}
-                </h3>
-              </div>
             </div>
 
             {/* Editorial Description Text */}
@@ -192,57 +183,48 @@ export default function TrendingNow({
             <div 
               className="relative w-full aspect-[282/275] overflow-hidden bg-[#2D2A28] group cursor-pointer luxury-shine-card"
               onClick={() => onItemClick && onItemClick(item1)}
+              aria-label={item1.title}
             >
               <img
                 src={item1.image || defaultEverydayMinimalImage}
                 alt={item1.alt || item1.title}
-                className="w-full h-full object-cover group-hover:scale-105 group-hover:brightness-[1.03] transition-all duration-700 ease-out"
+                className="w-full h-full object-cover brightness-[1.06] contrast-[1.02] group-hover:scale-105 group-hover:brightness-[1.16] transition-all duration-700 ease-out"
               />
+              <div className="shine-glow" />
               <div className="shine-ambient" />
               <div className="shine-beam" />
-              <div className="absolute inset-0 flex items-center justify-center p-4 pointer-events-none z-30">
-                <h3 className="font-serif font-medium text-white uppercase text-center tracking-[0.16em] group-hover:tracking-[0.18em] text-[13px] transition-all duration-500">
-                  {item1.title}
-                </h3>
-              </div>
             </div>
 
             {/* Card 2 */}
             <div 
               className="relative w-full aspect-[323/416] overflow-hidden bg-[#2D2A28] group cursor-pointer luxury-shine-card"
               onClick={() => onItemClick && onItemClick(item2)}
+              aria-label={item2.title}
             >
               <img
                 src={item2.image || defaultAfterDarkImage}
                 alt={item2.alt || item2.title}
-                className="w-full h-full object-cover group-hover:scale-105 group-hover:brightness-[1.03] transition-all duration-700 ease-out"
+                className="w-full h-full object-cover brightness-[1.06] contrast-[1.02] group-hover:scale-105 group-hover:brightness-[1.16] transition-all duration-700 ease-out"
               />
+              <div className="shine-glow" />
               <div className="shine-ambient" />
               <div className="shine-beam" />
-              <div className="absolute inset-0 flex items-center justify-center p-4 pointer-events-none z-30">
-                <h3 className="font-serif font-medium text-white uppercase text-center tracking-[0.16em] group-hover:tracking-[0.18em] text-[13px] transition-all duration-500">
-                  {item2.title}
-                </h3>
-              </div>
             </div>
 
             {/* Card 3 */}
             <div 
               className="relative w-full aspect-[282/294] overflow-hidden bg-[#2D2A28] group cursor-pointer luxury-shine-card"
               onClick={() => onItemClick && onItemClick(item3)}
+              aria-label={item3.title}
             >
               <img
                 src={item3.image || defaultSoftStructureImage}
                 alt={item3.alt || item3.title}
-                className="w-full h-full object-cover group-hover:scale-105 group-hover:brightness-[1.03] transition-all duration-700 ease-out"
+                className="w-full h-full object-cover brightness-[1.06] contrast-[1.02] group-hover:scale-105 group-hover:brightness-[1.16] transition-all duration-700 ease-out"
               />
+              <div className="shine-glow" />
               <div className="shine-ambient" />
               <div className="shine-beam" />
-              <div className="absolute inset-0 flex items-center justify-center p-4 pointer-events-none z-30">
-                <h3 className="font-serif font-medium text-white uppercase text-center tracking-[0.16em] group-hover:tracking-[0.18em] text-[13px] transition-all duration-500">
-                  {item3.title}
-                </h3>
-              </div>
             </div>
 
             {/* Description Text */}

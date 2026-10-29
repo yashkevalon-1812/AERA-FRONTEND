@@ -52,33 +52,64 @@ body {
 }
 
 /* ============================================================== */
-/* LUXURY EDITORIAL WHITE SHINE HOVER EFFECT                      */
-/* Pure hardware-accelerated diagonal white gloss sweep           */
+/* LUXURY EDITORIAL WHITE SHINE & GLOW HOVER EFFECT               */
+/* Hardware-accelerated white screen glow & specular beam sweep   */
 /* ============================================================== */
 .luxury-shine-card {
   position: relative;
   overflow: hidden;
+  transition: box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.luxury-shine-card:hover,
+.luxury-shine-card:focus-within {
+  box-shadow: 0 0 35px rgba(255, 255, 255, 0.45), inset 0 0 25px rgba(255, 255, 255, 0.25);
+}
+
+/* 1. Luminous White Radial Glow across whole card on hover */
+.luxury-shine-card .shine-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 45%,
+    rgba(255, 255, 255, 0.35) 0%,
+    rgba(255, 255, 255, 0.18) 50%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  opacity: 0;
+  pointer-events: none;
+  z-index: 15;
+  mix-blend-mode: screen;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-shine-card:hover .shine-glow,
+.luxury-shine-card:focus-within .shine-glow,
+.luxury-shine-card.shine-active .shine-glow {
+  opacity: 1;
+}
+
+/* 2. High-Intensity Diagonal White Specular Beam Sweep */
 .luxury-shine-card .shine-beam {
   position: absolute;
   top: -60%;
   bottom: -60%;
   left: -120%;
-  width: 65%;
+  width: 75%;
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.18) 25%,
-    rgba(255, 255, 255, 0.55) 50%,
-    rgba(255, 255, 255, 0.18) 75%,
+    rgba(255, 255, 255, 0.30) 20%,
+    rgba(255, 255, 255, 0.90) 50%,
+    rgba(255, 255, 255, 0.30) 80%,
     rgba(255, 255, 255, 0) 100%
   );
   transform: skewX(-22deg) translate3d(0, 0, 0);
   pointer-events: none;
   opacity: 0;
-  z-index: 20;
-  transition: transform 0.95s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease;
+  z-index: 25;
+  mix-blend-mode: screen;
+  transition: transform 1.05s cubic-bezier(0.2, 0.85, 0.3, 1), opacity 0.25s ease;
 }
 
 .luxury-shine-card:hover .shine-beam,
@@ -88,18 +119,19 @@ body {
   transform: skewX(-22deg) translate3d(450%, 0, 0);
 }
 
+/* 3. Ambient Soft White Overlay */
 .luxury-shine-card .shine-ambient {
   position: absolute;
   inset: 0;
   background-color: rgba(255, 255, 255, 0);
   pointer-events: none;
-  z-index: 15;
-  transition: background-color 0.6s ease;
+  z-index: 10;
+  transition: background-color 0.5s ease;
 }
 
 .luxury-shine-card:hover .shine-ambient,
 .luxury-shine-card:focus-within .shine-ambient,
 .luxury-shine-card.shine-active .shine-ambient {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.12);
 }
 

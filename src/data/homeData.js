@@ -20,9 +20,9 @@ import topsImage from '../assets/shop-the-edit/tops.jpg'
 import menBannerImage from '../assets/dual-banners/men.jpg'
 import womenBannerImage from '../assets/dual-banners/women.jpg'
 
-import everydayMinimalImage from '../assets/trending-now/everyday-minimal.jpg'
-import afterDarkImage from '../assets/trending-now/after-dark.jpg'
-import softStructureImage from '../assets/trending-now/soft-structure.jpg'
+import everydayMinimalImage from '../assets/trending-now/everyday-minimal.png'
+import afterDarkImage from '../assets/trending-now/after-dark.png'
+import softStructureImage from '../assets/trending-now/soft-structure.png'
 
 import mostWantedCard1 from '../assets/most-wanted/card-1.png'
 import mostWantedCard2 from '../assets/most-wanted/card-2.png'
