@@ -1,35 +1,96 @@
 import React from 'react'
 
-const defaultBrands = [
-  { name: 'MANGO', style: 'font-sans font-bold tracking-[0.22em] text-[13px] sm:text-[14px] md:text-[15px]' },
-  { name: 'H&M', style: 'font-serif italic font-bold tracking-wider text-[17px] sm:text-[19px] md:text-[21px]' },
-  { name: 'Bershka', style: 'font-sans font-medium tracking-wide text-[13.5px] sm:text-[15px] md:text-[16px]' },
-  { name: 'ONLY', style: 'font-sans font-black tracking-tight text-[15px] sm:text-[16.5px] md:text-[18px]' },
-  { name: 'NEXT', style: 'font-sans font-light tracking-[0.24em] text-[12.5px] sm:text-[14px] md:text-[15px]' },
-  { name: 'COS', style: 'font-sans font-bold tracking-[0.28em] text-[13px] sm:text-[14.5px] md:text-[16px]' },
+import mangoLogo from '../../assets/brands/mango.png'
+import mangoLogo2x from '../../assets/brands/mango@2x.png'
+import hmLogo from '../../assets/brands/hm.png'
+import hmLogo2x from '../../assets/brands/hm@2x.png'
+import bershkaLogo from '../../assets/brands/bershka.png'
+import bershkaLogo2x from '../../assets/brands/bershka@2x.png'
+import onlyLogo from '../../assets/brands/only.png'
+import onlyLogo2x from '../../assets/brands/only@2x.png'
+import nextLogo from '../../assets/brands/next.png'
+import nextLogo2x from '../../assets/brands/next@2x.png'
+import cosLogo from '../../assets/brands/cos.png'
+import cosLogo2x from '../../assets/brands/cos@2x.png'
+
+const BRAND_ITEMS = [
+  { name: 'MANGO', logo: mangoLogo, logo2x: mangoLogo2x, height: 14, width: 73 },
+  { name: 'H&M', logo: hmLogo, logo2x: hmLogo2x, height: 20, width: 28 },
+  { name: 'Bershka', logo: bershkaLogo, logo2x: bershkaLogo2x, height: 16, width: 62 },
+  { name: 'ONLY', logo: onlyLogo, logo2x: onlyLogo2x, height: 12, width: 50 },
+  { name: 'NEXT', logo: nextLogo, logo2x: nextLogo2x, height: 12, width: 49 },
+  { name: 'COS', logo: cosLogo, logo2x: cosLogo2x, height: 15, width: 36 },
 ]
 
-export default function BrandBar({ brands = defaultBrands }) {
-  const brandList = brands && brands.length > 0 ? brands : defaultBrands
+// Repeat 4 sets per half so Half A is ~4000px wide (covers all displays up to 4K seamlessly)
+const HALF_SET = [...BRAND_ITEMS, ...BRAND_ITEMS, ...BRAND_ITEMS, ...BRAND_ITEMS]
 
+export default function BrandBar() {
   return (
-    <div className="w-full bg-[#97173A] text-white select-none overflow-hidden h-[37px] flex items-center">
-      <div className="w-full max-w-[1920px] mx-auto px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 h-full flex items-center">
-        
-        {/* Evenly Spaced Brand Row */}
-        <div className="w-full flex items-center justify-between gap-4 sm:gap-6 md:gap-8 flex-nowrap overflow-x-auto no-scrollbar">
-          {brandList.map((brand, idx) => (
+    <div 
+      aria-label="Brand Partners"
+      className="w-full bg-[#97173A] text-white select-none overflow-hidden h-[37px] flex items-center relative z-10"
+    >
+      <style>{`
+        @keyframes marquee-left-to-right {
+          0% {
+            transform: translate3d(-50%, 0, 0);
+          }
+          100% {
+            transform: translate3d(0%, 0, 0);
+          }
+        }
+        .brand-marquee-track {
+          display: flex;
+          width: max-content;
+          align-items: center;
+          animation: marquee-left-to-right 50s linear infinite;
+          will-change: transform;
+        }
+        .brand-marquee-track:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+
+      {/* Infinite Left-to-Right Scrolling Track */}
+      <div className="brand-marquee-track flex items-center">
+        {/* Half A */}
+        <div className="flex items-center flex-nowrap">
+          {HALF_SET.map((brand, idx) => (
             <div
-              key={idx}
-              className="flex-1 min-w-fit text-center flex items-center justify-center transition-opacity hover:opacity-85 cursor-default"
+              key={`half-a-${idx}`}
+              className="flex-shrink-0 flex items-center justify-center w-[165px] transition-opacity duration-200 hover:opacity-100 opacity-95 cursor-pointer"
             >
-              <span className={`${brand.style || 'font-sans font-bold'} text-white block leading-none whitespace-nowrap`}>
-                {brand.name}
-              </span>
+              <img
+                src={brand.logo}
+                srcSet={`${brand.logo2x} 2x`}
+                alt={brand.name}
+                className="select-none pointer-events-none object-contain"
+                style={{ height: `${brand.height}px`, width: 'auto' }}
+                loading="eager"
+              />
             </div>
           ))}
         </div>
 
+        {/* Half B (Duplicate for seamless loop) */}
+        <div className="flex items-center flex-nowrap">
+          {HALF_SET.map((brand, idx) => (
+            <div
+              key={`half-b-${idx}`}
+              className="flex-shrink-0 flex items-center justify-center w-[165px] transition-opacity duration-200 hover:opacity-100 opacity-95 cursor-pointer"
+            >
+              <img
+                src={brand.logo}
+                srcSet={`${brand.logo2x} 2x`}
+                alt={brand.name}
+                className="select-none pointer-events-none object-contain"
+                style={{ height: `${brand.height}px`, width: 'auto' }}
+                loading="eager"
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )
