@@ -79,15 +79,15 @@ export default function NewArrivals({
     
     // Exact 1024 baseline coordinates when activeIndex is 1 (Card 2)
     if (activeIndex === 1) {
-      if (index === 0) return { left: '4.2%', width: '17.3%', top: '31.0%', height: '51.1%', zIndex: 10 }
-      if (index === 1) return { left: '21.5%', width: '22.7%', top: '22.9%', height: '67.2%', zIndex: 20 }
-      if (index === 2) return { left: '44.1%', width: '17.2%', top: '31.0%', height: '51.1%', zIndex: 10 }
-      if (index === 3) return { left: '61.3%', width: '17.3%', top: '31.0%', height: '51.1%', zIndex: 10 }
-      if (index === 4) return { left: '78.6%', width: '17.3%', top: '31.0%', height: '51.1%', zIndex: 10 }
+      if (index === 0) return { left: '4.20%', width: '17.29%', top: '27.92%', height: '46.46%', zIndex: 10 }
+      if (index === 1) return { left: '21.48%', width: '22.66%', top: '20.83%', height: '61.04%', zIndex: 20 }
+      if (index === 2) return { left: '44.14%', width: '17.19%', top: '27.92%', height: '46.46%', zIndex: 10 }
+      if (index === 3) return { left: '61.33%', width: '17.29%', top: '27.92%', height: '46.46%', zIndex: 10 }
+      if (index === 4) return { left: '78.61%', width: '17.29%', top: '27.92%', height: '46.46%', zIndex: 10 }
     }
 
     // Dynamic general formula for arbitrary active index
-    const stdWidthPct = 17.26
+    const stdWidthPct = 17.29
     const actWidthPct = 22.66
     let leftPct = 4.20
     for (let i = 0; i < index; i++) {
@@ -97,8 +97,8 @@ export default function NewArrivals({
     return {
       left: `${leftPct.toFixed(2)}%`,
       width: `${isActive ? actWidthPct : stdWidthPct}%`,
-      top: isActive ? '22.9%' : '31.0%',
-      height: isActive ? '67.2%' : '51.1%',
+      top: isActive ? '20.83%' : '27.92%',
+      height: isActive ? '61.04%' : '46.46%',
       zIndex: isActive ? 20 : 10,
     }
   }
@@ -109,17 +109,20 @@ export default function NewArrivals({
       {/* ============================================================== */}
       {/* 1. Desktop & Tablet Layout (>= md): Pixel-Perfect Strip       */}
       {/* ============================================================== */}
-      <div className="hidden md:block relative w-full aspect-[1024/436] min-h-[440px] max-h-[820px]">
+      <div className="hidden md:block relative w-full aspect-[1024/480] min-h-[480px]">
         
         {/* 1A. Top-Left Section Title ("New Arrivals") */}
-        <div className="absolute left-[4.2%] top-[8.9%] z-10 pointer-events-none select-none">
-          <h2 className="font-serif font-normal text-[#F8F5E8] text-[26px] md:text-[30px] lg:text-[35px] xl:text-[42px] 2xl:text-[48px] tracking-normal leading-none">
+        <div className="absolute left-[4.20%] top-[7.40%] z-10 pointer-events-none select-none">
+          <h2 
+            className="font-serif font-normal text-[#F8F5E8] leading-none"
+            style={{ fontSize: '35.5px', letterSpacing: '-0.01em' }}
+          >
             {title}
           </h2>
         </div>
 
         {/* 1B. Top-Right Subtitle & View All Action */}
-        <div className="absolute right-[4.1%] top-[10.8%] z-10 text-right flex flex-col items-end pointer-events-auto">
+        <div className="absolute right-[4.10%] top-[9.35%] z-10 text-right flex flex-col items-end pointer-events-auto">
           {tagline && (
             <span className="font-sans font-normal text-[#F8F5E8]/80 text-[8px] md:text-[9px] lg:text-[10px] xl:text-[11.5px] 2xl:text-[13px] tracking-[0.14em] uppercase block leading-tight">
               {tagline}
@@ -208,10 +211,10 @@ export default function NewArrivals({
         })}
 
         {/* 1D. Bottom-Right Pagination & Progress Track */}
-        <div className="absolute right-[4.1%] bottom-[8.5%] z-20 flex items-center gap-4 lg:gap-5 pointer-events-auto">
+        <div className="absolute right-[4.10%] top-[86.0%] z-20 flex items-center gap-[17px] pointer-events-auto">
           
           {/* Progress Bar Track */}
-          <div className="relative w-[110px] md:w-[130px] lg:w-[147px] h-[2px] bg-[#d9d9d9] overflow-hidden">
+          <div className="relative w-[148px] h-[2px] bg-[#d9d9d9] overflow-hidden">
             <div
               className="h-full bg-[#7ebcff] transition-all duration-300"
               style={{
@@ -219,7 +222,7 @@ export default function NewArrivals({
                   activeSlide === 1
                     ? '33.3%'
                     : activeSlide === 2
-                    ? '66.7%'
+                    ? '91.2%'
                     : activeSlide === 3
                     ? '83.3%'
                     : '100%',
@@ -229,7 +232,7 @@ export default function NewArrivals({
 
           {/* Slide Numbers */}
           <div className="flex items-center gap-2.5 lg:gap-3.5">
-            {[1, 2, 3, 4].map((num) => {
+            {[1, 2, 3, 4, 5].map((num) => {
               const isActive = num === activeSlide
               return (
                 <button
@@ -350,11 +353,11 @@ export default function NewArrivals({
           <div className="relative flex-1 mr-6 h-[2px] bg-[#d9d9d9]">
             <div
               className="h-full bg-[#7ebcff] transition-all duration-300"
-              style={{ width: `${Math.min((activeSlide / 4) * 100, 100)}%` }}
+              style={{ width: `${Math.min((activeSlide / 5) * 100, 100)}%` }}
             />
           </div>
           <div className="flex items-center gap-3">
-            {[1, 2, 3, 4].map((num) => {
+            {[1, 2, 3, 4, 5].map((num) => {
               const isActive = num === activeSlide
               return (
                 <button
