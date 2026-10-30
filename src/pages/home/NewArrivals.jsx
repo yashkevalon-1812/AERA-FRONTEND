@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import defaultCard1 from '../../assets/new-arrivals/card-1.jpg'
 import defaultCard2 from '../../assets/new-arrivals/card-2.jpg'
 import defaultCard3 from '../../assets/new-arrivals/card-3.jpg'
@@ -61,7 +61,20 @@ export default function NewArrivals({
   onItemClick,
 }) {
   const [activeSlide, setActiveSlide] = useState(initialSlide)
+  const [isPaused, setIsPaused] = useState(false)
   const productItems = items && items.length > 0 ? items : defaultItems
+  const totalSlides = Math.min(productItems.length, 5)
+
+  // Automatic 5-second slide scroll timer (5000ms), paused on user hover
+  useEffect(() => {
+    if (isPaused) return
+
+    const timer = setInterval(() => {
+      setActiveSlide((prev) => (prev >= totalSlides ? 1 : prev + 1))
+    }, 5000)
+
+    return () => clearInterval(timer)
+  }, [isPaused, totalSlides])
 
   // Calculate percentage coordinates for desktop 5-card layout
   // Matching 1024x436 reference composition:
@@ -104,7 +117,7 @@ export default function NewArrivals({
   }
 
   return (
-    <section className="relative w-full max-w-[1920px] mx-auto bg-[#84463b] overflow-hidden select-none">
+    <section onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} className="relative w-full max-w-[1920px] mx-auto bg-[#84463b] overflow-hidden select-none">
       
       {/* ============================================================== */}
       {/* 1. Desktop & Tablet Layout (>= md): Pixel-Perfect Strip       */}
